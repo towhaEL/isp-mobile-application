@@ -1,0 +1,2081 @@
+{
+  "@@locale": "en",
+  "welcome": "Welcome to Flutter!!",
+  "@welcome": {
+    "description": "welcome label"
+  },
+  "errorBadRequest": "Bad request. Please check your input and try again.",
+  "@errorBadRequest": {
+    "description": "errorBadRequest label"
+  },
+  "errorNotFound": "Resource not found.",
+  "@errorNotFound": {
+    "description": "errorNotFound label"
+  },
+  "errorUnauthorized": "Unauthorized access. Please check your credentials.",
+  "@errorUnauthorized": {
+    "description": "errorUnauthorized label"
+  },
+  "errorNoInternet": "No internet connection. Please check your network and try again.",
+  "@errorNoInternet": {
+    "description": "errorNoInternet label"
+  },
+  "errorUnexpected": "An unexpected error occurred. Please try again later.",
+  "@errorUnexpected": {
+    "description": "errorUnexpected label"
+  },
+  "errorSendTimeout": "Request timeout. Please try again.",
+  "@errorSendTimeout": {
+    "description": "errorSendTimeout label"
+  },
+  "errorConnectionTimeout": "Connection timed out. Please check your network.",
+  "@errorConnectionTimeout": {
+    "description": "errorConnectionTimeout label"
+  },
+  "errorReceiveTimeout": "Response timeout. Please try again.",
+  "@errorReceiveTimeout": {
+    "description": "errorReceiveTimeout label"
+  },
+  "errorCancel": "Request was cancelled.",
+  "@errorCancel": {
+    "description": "errorCancel label"
+  },
+  "errorUnknown": "An unknown error occurred. Please try again.",
+  "@errorUnknown": {
+    "description": "errorUnknown label"
+  },
+  "errorConflict": "Conflict detected. This email is already in use.",
+  "@errorConflict": {
+    "description": "errorConflict label"
+  },
+  "errorUnprocessable": "Request could not be processed. Please verify your data.",
+  "@errorUnprocessable": {
+    "description": "errorUnprocessable label"
+  },
+  "errorTooManyRequests": "Too many requests. Please wait and try again later.",
+  "@errorTooManyRequests": {
+    "description": "errorTooManyRequests label"
+  },
+  "errorInternalServerError": "Internal server error. Please try again later.",
+  "@errorInternalServerError": {
+    "description": "errorInternalServerError label"
+  },
+  "errorBadGateway": "Bad gateway. Please try again later.",
+  "@errorBadGateway": {
+    "description": "errorBadGateway label"
+  },
+  "appName": "ISP Selfcare",
+  "@appName": {
+    "description": "appName label"
+  },
+  "subscribe": "Subscribe",
+  "@subscribe": {
+    "description": "subscribe label"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "cancel label"
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "retry label"
+  },
+  "pro": "PRO",
+  "@pro": {
+    "description": "pro label"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "email label"
+  },
+  "pin": "Pin (4-6 digit)",
+  "@pin": {
+    "description": "pin label"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "login label"
+  },
+  "logout": "Logout",
+  "@logout": {
+    "description": "logout label"
+  },
+  "emailRequired": "Email is required",
+  "@emailRequired": {
+    "description": "emailRequired label"
+  },
+  "invalidEmail": "Please enter a valid email address",
+  "@invalidEmail": {
+    "description": "invalidEmail label"
+  },
+  "pinRequired": "Pin Required",
+  "@pinRequired": {
+    "description": "pinRequired label"
+  },
+  "pinLength": "Pin Length must be 4-6 digit",
+  "@pinLength": {
+    "description": "pinLength label"
+  },
+  "passwordRequired": "Password is required",
+  "@passwordRequired": {
+    "description": "passwordRequired label"
+  },
+  "passwordMinLength": "Password must be at least 6 characters",
+  "@passwordMinLength": {
+    "description": "passwordMinLength label"
+  },
+  "splashTagline": "A production-grade Clean Architecture starter",
+  "@splashTagline": {
+    "description": "splashTagline label"
+  },
+  "splashVersion": "Version 1.0.0",
+  "@splashVersion": {
+    "description": "splashVersion label"
+  },
+  "loginWelcomeTitle": "Welcome Back",
+  "@loginWelcomeTitle": {
+    "description": "loginWelcomeTitle label"
+  },
+  "loginSubtitle": "Login to your account to continue",
+  "@loginSubtitle": {
+    "description": "loginSubtitle label"
+  },
+  "loginEmailHint": "Enter your email",
+  "@loginEmailHint": {
+    "description": "loginEmailHint label"
+  },
+  "loginPinHint": "Enter your PIN",
+  "@loginPinHint": {
+    "description": "loginPinHint label"
+  },
+  "demoBadge": "DEMO",
+  "@demoBadge": {
+    "description": "demoBadge label"
+  },
+  "loginDemoCredentials": "Prefilled test@gmail.com / 1234",
+  "@loginDemoCredentials": {
+    "description": "loginDemoCredentials label"
+  },
+  "subscriptionActive": "Subscription Active",
+  "@subscriptionActive": {
+    "description": "subscriptionActive label"
+  },
+  "premiumFeatureTitle": "Premium Feature",
+  "@premiumFeatureTitle": {
+    "description": "premiumFeatureTitle label"
+  },
+  "premiumFeatureSubtitle": "Subscribe to unlock the full user list.",
+  "@premiumFeatureSubtitle": {
+    "description": "premiumFeatureSubtitle label"
+  },
+  "unlockPremiumTitle": "Unlock Premium",
+  "@unlockPremiumTitle": {
+    "description": "unlockPremiumTitle label"
+  },
+  "unlockPremiumSubtitle": "Subscribe to view the full user list.",
+  "@unlockPremiumSubtitle": {
+    "description": "unlockPremiumSubtitle label"
+  },
+  "userDirectoryTitle": "User Directory",
+  "@userDirectoryTitle": {
+    "description": "userDirectoryTitle label"
+  },
+  "userDirectorySubtitle": "Browse the team roster served through the repository layer.",
+  "@userDirectorySubtitle": {
+    "description": "userDirectorySubtitle label"
+  },
+  "premiumUnlockHint": "Premium unlocks the full list",
+  "@premiumUnlockHint": {
+    "description": "premiumUnlockHint label"
+  },
+  "navHome": "Home",
+  "@navHome": {
+    "description": "navHome label"
+  },
+  "navWidgets": "Widgets",
+  "@navWidgets": {
+    "description": "navWidgets label"
+  },
+  "navArchitecture": "Architecture",
+  "@navArchitecture": {
+    "description": "navArchitecture label"
+  },
+  "navSettings": "Settings",
+  "@navSettings": {
+    "description": "navSettings label"
+  },
+  "settingsTitle": "Settings",
+  "@settingsTitle": {
+    "description": "settingsTitle label"
+  },
+  "settingsAppearance": "Appearance",
+  "@settingsAppearance": {
+    "description": "settingsAppearance label"
+  },
+  "settingsTheme": "Theme",
+  "@settingsTheme": {
+    "description": "settingsTheme label"
+  },
+  "settingsLanguage": "Language",
+  "@settingsLanguage": {
+    "description": "settingsLanguage label"
+  },
+  "settingsAccount": "Account",
+  "@settingsAccount": {
+    "description": "settingsAccount label"
+  },
+  "logoutSubtitle": "Sign out of your account",
+  "@logoutSubtitle": {
+    "description": "logoutSubtitle label"
+  },
+  "themeSystem": "System",
+  "@themeSystem": {
+    "description": "themeSystem label"
+  },
+  "themeLight": "Light Mode",
+  "@themeLight": {
+    "description": "themeLight label"
+  },
+  "themeDark": "Dark Mode",
+  "@themeDark": {
+    "description": "themeDark label"
+  },
+  "languageSystem": "System",
+  "@languageSystem": {
+    "description": "languageSystem label"
+  },
+  "languageEnglish": "English",
+  "@languageEnglish": {
+    "description": "languageEnglish label"
+  },
+  "languageSpanish": "Spanish",
+  "@languageSpanish": {
+    "description": "languageSpanish label"
+  },
+  "galleryTitle": "Component Gallery",
+  "@galleryTitle": {
+    "description": "galleryTitle label"
+  },
+  "gallerySubtitle": "The template’s reusable widgets, grouped by role — all driven by the shared theme tokens.",
+  "@gallerySubtitle": {
+    "description": "gallerySubtitle label"
+  },
+  "sectionInputs": "Inputs",
+  "@sectionInputs": {
+    "description": "sectionInputs label"
+  },
+  "sectionSelection": "Selection",
+  "@sectionSelection": {
+    "description": "sectionSelection label"
+  },
+  "sectionOverlays": "Overlays & actions",
+  "@sectionOverlays": {
+    "description": "sectionOverlays label"
+  },
+  "fieldEmailHint": "Add Email",
+  "@fieldEmailHint": {
+    "description": "fieldEmailHint label"
+  },
+  "passwordLabel": "Password",
+  "@passwordLabel": {
+    "description": "passwordLabel label"
+  },
+  "fieldPasswordHint": "Add Password",
+  "@fieldPasswordHint": {
+    "description": "fieldPasswordHint label"
+  },
+  "searchLabel": "Search",
+  "@searchLabel": {
+    "description": "searchLabel label"
+  },
+  "textFieldLabel": "Text Field",
+  "@textFieldLabel": {
+    "description": "textFieldLabel label"
+  },
+  "fieldLabelGeneric": "Label",
+  "@fieldLabelGeneric": {
+    "description": "fieldLabelGeneric label"
+  },
+  "datePickerHint": "Date Picker",
+  "@datePickerHint": {
+    "description": "datePickerHint label"
+  },
+  "chooseCategory": "Choose category",
+  "@chooseCategory": {
+    "description": "chooseCategory label"
+  },
+  "showDialogButton": "Show Dialog",
+  "@showDialogButton": {
+    "description": "showDialogButton label"
+  },
+  "showSoftUpdateDialog": "Show Soft Update Dialog",
+  "@showSoftUpdateDialog": {
+    "description": "showSoftUpdateDialog label"
+  },
+  "buttonExample": "Button Example",
+  "@buttonExample": {
+    "description": "buttonExample label"
+  },
+  "openBottomSheet": "Open Bottom Sheet",
+  "@openBottomSheet": {
+    "description": "openBottomSheet label"
+  },
+  "bottomSheetGreeting": "Hello from the bottom sheet!",
+  "@bottomSheetGreeting": {
+    "description": "bottomSheetGreeting label"
+  },
+  "enableNotifications": "Enable notifications",
+  "@enableNotifications": {
+    "description": "enableNotifications label"
+  },
+  "checkbox": "Check Box",
+  "@checkbox": {
+    "description": "checkbox label"
+  },
+  "genderMale": "Male",
+  "@genderMale": {
+    "description": "genderMale label"
+  },
+  "genderFemale": "Female",
+  "@genderFemale": {
+    "description": "genderFemale label"
+  },
+  "updateInitiated": "Update initiated",
+  "@updateInitiated": {
+    "description": "updateInitiated label"
+  },
+  "categoryElectronics": "Electronics",
+  "@categoryElectronics": {
+    "description": "categoryElectronics label"
+  },
+  "categoryClothing": "Clothing",
+  "@categoryClothing": {
+    "description": "categoryClothing label"
+  },
+  "categoryBooks": "Books",
+  "@categoryBooks": {
+    "description": "categoryBooks label"
+  },
+  "categoryFood": "Food",
+  "@categoryFood": {
+    "description": "categoryFood label"
+  },
+  "categorySports": "Sports",
+  "@categorySports": {
+    "description": "categorySports label"
+  },
+  "updateDialogTitle": "App Update Available",
+  "@updateDialogTitle": {
+    "description": "updateDialogTitle label"
+  },
+  "updateDialogDescription": "A new version of the app is available. Please update to get the latest features and bug fixes.",
+  "@updateDialogDescription": {
+    "description": "updateDialogDescription label"
+  },
+  "updateLater": "Later",
+  "@updateLater": {
+    "description": "updateLater label"
+  },
+  "updateNow": "Update Now",
+  "@updateNow": {
+    "description": "updateNow label"
+  },
+  "archCleanTitle": "Clean Architecture",
+  "@archCleanTitle": {
+    "description": "archCleanTitle label"
+  },
+  "archIntro": "Dependencies point inward. Outer layers know inner ones — never the reverse. This is the rule the whole template is built around.",
+  "@archIntro": {
+    "description": "archIntro label"
+  },
+  "archPatternsTitle": "Design patterns",
+  "@archPatternsTitle": {
+    "description": "archPatternsTitle label"
+  },
+  "archPatternsSubtitle": "Every GoF pattern this template uses, grouped by kind — each tied to the real class that implements it.",
+  "@archPatternsSubtitle": {
+    "description": "archPatternsSubtitle label"
+  },
+  "archSeenInLabel": "Seen in:",
+  "@archSeenInLabel": {
+    "description": "archSeenInLabel label"
+  },
+  "archCoreCrossCutting": "cross-cutting",
+  "@archCoreCrossCutting": {
+    "description": "archCoreCrossCutting label"
+  },
+  "archLayerPresentationTitle": "Presentation",
+  "@archLayerPresentationTitle": {
+    "description": "archLayerPresentationTitle label"
+  },
+  "archLayerPresentationDesc": "BLoC / Cubit, screens, theme tokens and reusable widgets.",
+  "@archLayerPresentationDesc": {
+    "description": "archLayerPresentationDesc label"
+  },
+  "archLayerDomainTitle": "Domain",
+  "@archLayerDomainTitle": {
+    "description": "archLayerDomainTitle label"
+  },
+  "archLayerDomainDesc": "Entities, use-cases and repository interfaces. Pure Dart, no Flutter.",
+  "@archLayerDomainDesc": {
+    "description": "archLayerDomainDesc label"
+  },
+  "archLayerDataTitle": "Data",
+  "@archLayerDataTitle": {
+    "description": "archLayerDataTitle label"
+  },
+  "archLayerDataDesc": "Repository implementations, data sources (mock + remote) and DTO remappers.",
+  "@archLayerDataDesc": {
+    "description": "archLayerDataDesc label"
+  },
+  "archConnectorDependsOn": "depends on",
+  "@archConnectorDependsOn": {
+    "description": "archConnectorDependsOn label"
+  },
+  "archConnectorImplementedBy": "implemented by",
+  "@archConnectorImplementedBy": {
+    "description": "archConnectorImplementedBy label"
+  },
+  "archCatCreational": "Creational",
+  "@archCatCreational": {
+    "description": "archCatCreational label"
+  },
+  "archCatStructural": "Structural",
+  "@archCatStructural": {
+    "description": "archCatStructural label"
+  },
+  "archCatBehavioral": "Behavioral",
+  "@archCatBehavioral": {
+    "description": "archCatBehavioral label"
+  },
+  "archCatArchitectural": "Architectural",
+  "@archCatArchitectural": {
+    "description": "archCatArchitectural label"
+  },
+  "patternSingletonName": "Singleton",
+  "@patternSingletonName": {
+    "description": "patternSingletonName label"
+  },
+  "patternSingletonDesc": "One shared instance for the whole app — get_it returns the same object, and theme modes cache themselves behind a factory constructor.",
+  "@patternSingletonDesc": {
+    "description": "patternSingletonDesc label"
+  },
+  "patternSingletonSeen": "theme switching & the DI graph",
+  "@patternSingletonSeen": {
+    "description": "patternSingletonSeen label"
+  },
+  "patternFactoryName": "Factory Method",
+  "@patternFactoryName": {
+    "description": "patternFactoryName label"
+  },
+  "patternFactoryDesc": "Named factory constructors build the right configured object without exposing the constructor — the whole typed text scale is factory methods.",
+  "@patternFactoryDesc": {
+    "description": "patternFactoryDesc label"
+  },
+  "patternFactorySeen": "every AppText.* in the UI",
+  "@patternFactorySeen": {
+    "description": "patternFactorySeen label"
+  },
+  "patternAbstractFactoryName": "Abstract Factory",
+  "@patternAbstractFactoryName": {
+    "description": "patternAbstractFactoryName label"
+  },
+  "patternAbstractFactoryDesc": "Creates whole families of related data sources (user + auth). The flavor picks Mock vs Remote at DI time, so dev runs offline.",
+  "@patternAbstractFactoryDesc": {
+    "description": "patternAbstractFactoryDesc label"
+  },
+  "patternAbstractFactorySeen": "the Home user directory",
+  "@patternAbstractFactorySeen": {
+    "description": "patternAbstractFactorySeen label"
+  },
+  "patternPrototypeName": "Prototype",
+  "@patternPrototypeName": {
+    "description": "patternPrototypeName label"
+  },
+  "patternPrototypeDesc": "Clone-and-modify: copyWith / lerp produce a new object from an existing one — how themes interpolate and entities update immutably.",
+  "@patternPrototypeDesc": {
+    "description": "patternPrototypeDesc label"
+  },
+  "patternPrototypeSeen": "theme transitions & state updates",
+  "@patternPrototypeSeen": {
+    "description": "patternPrototypeSeen label"
+  },
+  "patternAdapterName": "Adapter",
+  "@patternAdapterName": {
+    "description": "patternAdapterName label"
+  },
+  "patternAdapterDesc": "Adapts the API’s UserResponseModel shape into the domain UserEntity the app expects, keeping the two independent.",
+  "@patternAdapterDesc": {
+    "description": "patternAdapterDesc label"
+  },
+  "patternAdapterSeen": "the user-list mapping",
+  "@patternAdapterSeen": {
+    "description": "patternAdapterSeen label"
+  },
+  "patternBridgeName": "Bridge",
+  "@patternBridgeName": {
+    "description": "patternBridgeName label"
+  },
+  "patternBridgeDesc": "Separates the theme abstraction from its colour and text implementations, so each can vary independently.",
+  "@patternBridgeDesc": {
+    "description": "patternBridgeDesc label"
+  },
+  "patternBridgeSeen": "the light / dark theme system",
+  "@patternBridgeSeen": {
+    "description": "patternBridgeSeen label"
+  },
+  "patternFacadeName": "Facade",
+  "@patternFacadeName": {
+    "description": "patternFacadeName label"
+  },
+  "patternFacadeDesc": "A small, task-focused API over the sprawling FlutterSecureStorage — callers just get / set the access token.",
+  "@patternFacadeDesc": {
+    "description": "patternFacadeDesc label"
+  },
+  "patternFacadeSeen": "login & session checks",
+  "@patternFacadeSeen": {
+    "description": "patternFacadeSeen label"
+  },
+  "patternProxyName": "Proxy",
+  "@patternProxyName": {
+    "description": "patternProxyName label"
+  },
+  "patternProxyDesc": "Stands in for the real repository and enforces access — throws SubscriptionRequiredException until the user subscribes.",
+  "@patternProxyDesc": {
+    "description": "patternProxyDesc label"
+  },
+  "patternProxySeen": "the premium gate",
+  "@patternProxySeen": {
+    "description": "patternProxySeen label"
+  },
+  "patternDecoratorName": "Decorator",
+  "@patternDecoratorName": {
+    "description": "patternDecoratorName label"
+  },
+  "patternDecoratorDesc": "Wraps the remote repository and adds cache-first behaviour without changing its interface.",
+  "@patternDecoratorDesc": {
+    "description": "patternDecoratorDesc label"
+  },
+  "patternDecoratorSeen": "cached user loading",
+  "@patternDecoratorSeen": {
+    "description": "patternDecoratorSeen label"
+  },
+  "patternObserverName": "Observer (BLoC)",
+  "@patternObserverName": {
+    "description": "patternObserverName label"
+  },
+  "patternObserverDesc": "The UI subscribes to a stream of immutable states; the Cubit emits, BlocBuilder rebuilds. State in, UI out.",
+  "@patternObserverDesc": {
+    "description": "patternObserverDesc label"
+  },
+  "patternObserverSeen": "loading / success / error states",
+  "@patternObserverSeen": {
+    "description": "patternObserverSeen label"
+  },
+  "patternChainName": "Chain of Responsibility",
+  "@patternChainName": {
+    "description": "patternChainName label"
+  },
+  "patternChainDesc": "A Dio interceptor in the request/response chain that translates raw backend errors into typed ResponseErrors.",
+  "@patternChainDesc": {
+    "description": "patternChainDesc label"
+  },
+  "patternChainSeen": "every network error message",
+  "@patternChainSeen": {
+    "description": "patternChainSeen label"
+  },
+  "patternDiName": "Dependency Injection",
+  "@patternDiName": {
+    "description": "patternDiName label"
+  },
+  "patternDiDesc": "Classes declare their dependencies; the container wires the graph and gates registrations per environment.",
+  "@patternDiDesc": {
+    "description": "patternDiDesc label"
+  },
+  "patternDiSeen": "core/injector — app-wide",
+  "@patternDiSeen": {
+    "description": "patternDiSeen label"
+  },
+  "patternRepositoryName": "Repository",
+  "@patternRepositoryName": {
+    "description": "patternRepositoryName label"
+  },
+  "patternRepositoryDesc": "A domain-owned interface hiding data origins — the UI never knows if data is mocked, cached, remote or gated.",
+  "@patternRepositoryDesc": {
+    "description": "patternRepositoryDesc label"
+  },
+  "patternRepositorySeen": "all user-data access",
+  "@patternRepositorySeen": {
+    "description": "patternRepositorySeen label"
+  },
+  "webViewLoadError": "Failed To Load Page",
+  "@webViewLoadError": {
+    "description": "webViewLoadError label"
+  },
+  "webViewCouldNotOpen": "Could not open the link.",
+  "@webViewCouldNotOpen": {
+    "description": "webViewCouldNotOpen label"
+  },
+  "fieldEmpty": "Field Empty",
+  "@fieldEmpty": {
+    "description": "fieldEmpty label"
+  },
+  "noInternetConnection": "No Internet Connection",
+  "@noInternetConnection": {
+    "description": "noInternetConnection label"
+  },
+  "selfcare": "Self-care",
+  "@selfcare": {
+    "description": "selfcare label"
+  },
+  "signIn": "Sign in",
+  "@signIn": {
+    "description": "signIn label"
+  },
+  "customerId": "Customer ID",
+  "@customerId": {
+    "description": "customerId label"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "password label"
+  },
+  "loginErr": "Enter your password to continue.",
+  "@loginErr": {
+    "description": "loginErr label"
+  },
+  "forgot": "Forgot password?",
+  "@forgot": {
+    "description": "forgot label"
+  },
+  "or": "or",
+  "@or": {
+    "description": "or label"
+  },
+  "otpInstead": "Sign in with OTP instead",
+  "@otpInstead": {
+    "description": "otpInstead label"
+  },
+  "newHere": "New here?",
+  "@newHere": {
+    "description": "newHere label"
+  },
+  "applyLine": "Apply for a line",
+  "@applyLine": {
+    "description": "applyLine label"
+  },
+  "enterCode": "Enter the code",
+  "@enterCode": {
+    "description": "enterCode label"
+  },
+  "codeSent": "We sent a six-digit code to +880 1684 252611.",
+  "@codeSent": {
+    "description": "codeSent label"
+  },
+  "verify": "Verify and sign in",
+  "@verify": {
+    "description": "verify label"
+  },
+  "resendIn": "Resend code in 0:42",
+  "@resendIn": {
+    "description": "resendIn label"
+  },
+  "useId": "Use ID instead",
+  "@useId": {
+    "description": "useId label"
+  },
+  "connection": "Connection",
+  "@connection": {
+    "description": "connection label"
+  },
+  "linkAnother": "Link another connection",
+  "@linkAnother": {
+    "description": "linkAnother label"
+  },
+  "due": "due",
+  "@due": {
+    "description": "due label"
+  },
+  "by": "by",
+  "@by": {
+    "description": "by label"
+  },
+  "payThis": "Pay this line",
+  "@payThis": {
+    "description": "payThis label"
+  },
+  "payAll": "Pay all",
+  "@payAll": {
+    "description": "payAll label"
+  },
+  "allConnections": "All connections",
+  "@allConnections": {
+    "description": "allConnections label"
+  },
+  "manage": "Manage",
+  "@manage": {
+    "description": "manage label"
+  },
+  "offer": "Offer",
+  "@offer": {
+    "description": "offer label"
+  },
+  "referBanner": "20% off for you and a neighbour",
+  "@referBanner": {
+    "description": "referBanner label"
+  },
+  "view": "View",
+  "@view": {
+    "description": "view label"
+  },
+  "amountDue": "Amount due",
+  "@amountDue": {
+    "description": "amountDue label"
+  },
+  "cycle": "Cycle 29 Aug – 28 Sep 2026",
+  "@cycle": {
+    "description": "cycle label"
+  },
+  "payNow": "Pay now",
+  "@payNow": {
+    "description": "payNow label"
+  },
+  "autopay": "Autopay",
+  "@autopay": {
+    "description": "autopay label"
+  },
+  "paymentHistory": "Payment history",
+  "@paymentHistory": {
+    "description": "paymentHistory label"
+  },
+  "date": "Date",
+  "@date": {
+    "description": "date label"
+  },
+  "channel": "Channel",
+  "@channel": {
+    "description": "channel label"
+  },
+  "amount": "Amount",
+  "@amount": {
+    "description": "amount label"
+  },
+  "paying": "Paying",
+  "@paying": {
+    "description": "paying label"
+  },
+  "wallet": "Mobile wallet",
+  "@wallet": {
+    "description": "wallet label"
+  },
+  "card": "Card",
+  "@card": {
+    "description": "card label"
+  },
+  "payNote": "You leave the app to authorise, then return here for the receipt.",
+  "@payNote": {
+    "description": "payNote label"
+  },
+  "paymentReceived": "Payment received",
+  "@paymentReceived": {
+    "description": "paymentReceived label"
+  },
+  "runsTo": "Service runs to 28 Oct 2026",
+  "@runsTo": {
+    "description": "runsTo label"
+  },
+  "downloadReceipt": "Download receipt",
+  "@downloadReceipt": {
+    "description": "downloadReceipt label"
+  },
+  "done": "Done",
+  "@done": {
+    "description": "done label"
+  },
+  "autopayBlurb": "We charge the bill automatically each cycle.",
+  "@autopayBlurb": {
+    "description": "autopayBlurb label"
+  },
+  "chargeFrom": "Charge from",
+  "@chargeFrom": {
+    "description": "chargeFrom label"
+  },
+  "chargeWhen": "Charge when",
+  "@chargeWhen": {
+    "description": "chargeWhen label"
+  },
+  "whichLines": "Which lines",
+  "@whichLines": {
+    "description": "whichLines label"
+  },
+  "saveAutopay": "Save autopay",
+  "@saveAutopay": {
+    "description": "saveAutopay label"
+  },
+  "autopaySavedTitle": "Autopay is on",
+  "@autopaySavedTitle": {
+    "description": "autopaySavedTitle label"
+  },
+  "backToBill": "Back to bill",
+  "@backToBill": {
+    "description": "backToBill label"
+  },
+  "autopayOffTitle": "Autopay is off",
+  "@autopayOffTitle": {
+    "description": "autopayOffTitle label"
+  },
+  "autopayOffBody": "Turn it on to stop worrying about the due date.",
+  "@autopayOffBody": {
+    "description": "autopayOffBody label"
+  },
+  "allPlans": "All plans",
+  "@allPlans": {
+    "description": "allPlans label"
+  },
+  "current": "Current",
+  "@current": {
+    "description": "current label"
+  },
+  "currentPlan": "Current plan",
+  "@currentPlan": {
+    "description": "currentPlan label"
+  },
+  "perMonth": "Tk / month",
+  "@perMonth": {
+    "description": "perMonth label"
+  },
+  "details": "Details",
+  "@details": {
+    "description": "details label"
+  },
+  "switchingTo": "Switching to",
+  "@switchingTo": {
+    "description": "switchingTo label"
+  },
+  "from": "from",
+  "@from": {
+    "description": "from label"
+  },
+  "proRata": "Pro-rata this cycle",
+  "@proRata": {
+    "description": "proRata label"
+  },
+  "proRataNote": "The new speed applies within 30 minutes of confirming.",
+  "@proRataNote": {
+    "description": "proRataNote label"
+  },
+  "confirmSwitch": "Confirm switch",
+  "@confirmSwitch": {
+    "description": "confirmSwitch label"
+  },
+  "planQueued": "Plan change queued",
+  "@planQueued": {
+    "description": "planQueued label"
+  },
+  "download": "Download",
+  "@download": {
+    "description": "download label"
+  },
+  "upload": "Upload",
+  "@upload": {
+    "description": "upload label"
+  },
+  "unmeteredNote": "Unmetered plan — the graph is for your own reference; nothing here throttles or bills.",
+  "@unmeteredNote": {
+    "description": "unmeteredNote label"
+  },
+  "speedNote": "Run the test on Wi-Fi standing near the router for a fair reading.",
+  "@speedNote": {
+    "description": "speedNote label"
+  },
+  "network": "Network",
+  "@network": {
+    "description": "network label"
+  },
+  "ssid": "Network name (SSID)",
+  "@ssid": {
+    "description": "ssid label"
+  },
+  "wifiPassword": "Wi-Fi password",
+  "@wifiPassword": {
+    "description": "wifiPassword label"
+  },
+  "band": "Band",
+  "@band": {
+    "description": "band label"
+  },
+  "guestNetwork": "Guest network",
+  "@guestNetwork": {
+    "description": "guestNetwork label"
+  },
+  "restartRouter": "Restart router",
+  "@restartRouter": {
+    "description": "restartRouter label"
+  },
+  "restartNote": "Drops the line for about 90 seconds",
+  "@restartNote": {
+    "description": "restartNote label"
+  },
+  "devices": "Connected devices",
+  "@devices": {
+    "description": "devices label"
+  },
+  "lineCheck": "Line check",
+  "@lineCheck": {
+    "description": "lineCheck label"
+  },
+  "lastChecked": "Last checked 3 minutes ago",
+  "@lastChecked": {
+    "description": "lastChecked label"
+  },
+  "rerun": "Re-run",
+  "@rerun": {
+    "description": "rerun label"
+  },
+  "reachUs": "Reach us",
+  "@reachUs": {
+    "description": "reachUs label"
+  },
+  "yourTickets": "Your tickets",
+  "@yourTickets": {
+    "description": "yourTickets label"
+  },
+  "noTicketsTitle": "No tickets yet",
+  "@noTicketsTitle": {
+    "description": "noTicketsTitle label"
+  },
+  "noTicketsBody": "When something is wrong with the line, open a ticket and an engineer picks it up.",
+  "@noTicketsBody": {
+    "description": "noTicketsBody label"
+  },
+  "openTicket": "Open a ticket",
+  "@openTicket": {
+    "description": "openTicket label"
+  },
+  "problem": "Problem",
+  "@problem": {
+    "description": "problem label"
+  },
+  "whatHappening": "What is happening?",
+  "@whatHappening": {
+    "description": "whatHappening label"
+  },
+  "ticketPlaceholder": "No link light since 6pm; router restarted twice.",
+  "@ticketPlaceholder": {
+    "description": "ticketPlaceholder label"
+  },
+  "bestTime": "Best time to visit",
+  "@bestTime": {
+    "description": "bestTime label"
+  },
+  "bestTimeVal": "Today, after 5pm",
+  "@bestTimeVal": {
+    "description": "bestTimeVal label"
+  },
+  "submitTicket": "Submit ticket",
+  "@submitTicket": {
+    "description": "submitTicket label"
+  },
+  "ticketOpen": "Ticket #4413 open",
+  "@ticketOpen": {
+    "description": "ticketOpen label"
+  },
+  "ticketOpenBody": "An engineer replies within 2 hours. You get an SMS and a push.",
+  "@ticketOpenBody": {
+    "description": "ticketOpenBody label"
+  },
+  "viewThread": "View conversation",
+  "@viewThread": {
+    "description": "viewThread label"
+  },
+  "reply": "Write a reply",
+  "@reply": {
+    "description": "reply label"
+  },
+  "pointsBalance": "Reward points",
+  "@pointsBalance": {
+    "description": "pointsBalance label"
+  },
+  "pointsRate": "100 points = Tk 10 off your bill",
+  "@pointsRate": {
+    "description": "pointsRate label"
+  },
+  "redeem": "Redeem",
+  "@redeem": {
+    "description": "redeem label"
+  },
+  "ledger": "Points activity",
+  "@ledger": {
+    "description": "ledger label"
+  },
+  "yourCode": "Your referral code",
+  "@yourCode": {
+    "description": "yourCode label"
+  },
+  "referralBlurb": "Your neighbour gets 20% off month one. You get 500 points when their line goes live.",
+  "@referralBlurb": {
+    "description": "referralBlurb label"
+  },
+  "share": "Share",
+  "@share": {
+    "description": "share label"
+  },
+  "invites": "Invites",
+  "@invites": {
+    "description": "invites label"
+  },
+  "noInvitesTitle": "No invites yet",
+  "@noInvitesTitle": {
+    "description": "noInvitesTitle label"
+  },
+  "noInvitesBody": "Send your code to a neighbour to see their progress here.",
+  "@noInvitesBody": {
+    "description": "noInvitesBody label"
+  },
+  "movingLine": "Line to move",
+  "@movingLine": {
+    "description": "movingLine label"
+  },
+  "currentAddress": "Now at Road 144, Gulshan, Dhaka",
+  "@currentAddress": {
+    "description": "currentAddress label"
+  },
+  "newArea": "New area",
+  "@newArea": {
+    "description": "newArea label"
+  },
+  "newAddress": "New address",
+  "@newAddress": {
+    "description": "newAddress label"
+  },
+  "addressPlaceholder": "House 12, Road 7, Block C, flat 4B",
+  "@addressPlaceholder": {
+    "description": "addressPlaceholder label"
+  },
+  "moveDate": "Preferred date",
+  "@moveDate": {
+    "description": "moveDate label"
+  },
+  "moveDateVal": "19 Sep 2026, morning",
+  "@moveDateVal": {
+    "description": "moveDateVal label"
+  },
+  "relocateFee": "Shifting fee Tk 500 within a covered area; outside coverage a survey is needed first.",
+  "@relocateFee": {
+    "description": "relocateFee label"
+  },
+  "requestMove": "Request the move",
+  "@requestMove": {
+    "description": "requestMove label"
+  },
+  "relocateDoneTitle": "Move request sent",
+  "@relocateDoneTitle": {
+    "description": "relocateDoneTitle label"
+  },
+  "relocateDoneBody": "A coordinator calls within one working day to fix the slot.",
+  "@relocateDoneBody": {
+    "description": "relocateDoneBody label"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "language label"
+  },
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "notifications label"
+  },
+  "accountDetails": "Account details",
+  "@accountDetails": {
+    "description": "accountDetails label"
+  },
+  "signOut": "Sign out",
+  "@signOut": {
+    "description": "signOut label"
+  },
+  "editContact": "Edit contact details",
+  "@editContact": {
+    "description": "editContact label"
+  },
+  "changePassword": "Change password",
+  "@changePassword": {
+    "description": "changePassword label"
+  },
+  "signedIn": "Signed in",
+  "@signedIn": {
+    "description": "signedIn label"
+  },
+  "noNotifTitle": "Nothing new",
+  "@noNotifTitle": {
+    "description": "noNotifTitle label"
+  },
+  "noNotifBody": "Bills, outages and ticket replies land here.",
+  "@noNotifBody": {
+    "description": "noNotifBody label"
+  },
+  "offlineNote": "No internet — showing your last saved data.",
+  "@offlineNote": {
+    "description": "offlineNote label"
+  },
+  "titleHome": "Connections",
+  "@titleHome": {
+    "description": "titleHome label"
+  },
+  "titleBill": "My bill",
+  "@titleBill": {
+    "description": "titleBill label"
+  },
+  "titlePay": "Pay bill",
+  "@titlePay": {
+    "description": "titlePay label"
+  },
+  "titlePaid": "Receipt",
+  "@titlePaid": {
+    "description": "titlePaid label"
+  },
+  "titlePackages": "Packages",
+  "@titlePackages": {
+    "description": "titlePackages label"
+  },
+  "titlePlanchange": "Change plan",
+  "@titlePlanchange": {
+    "description": "titlePlanchange label"
+  },
+  "titlePlanchanged": "Change plan",
+  "@titlePlanchanged": {
+    "description": "titlePlanchanged label"
+  },
+  "titleUsage": "Bandwidth usage",
+  "@titleUsage": {
+    "description": "titleUsage label"
+  },
+  "titleSpeedtest": "Speed test",
+  "@titleSpeedtest": {
+    "description": "titleSpeedtest label"
+  },
+  "titleWifi": "Wi-Fi & router",
+  "@titleWifi": {
+    "description": "titleWifi label"
+  },
+  "titleSupport": "Support",
+  "@titleSupport": {
+    "description": "titleSupport label"
+  },
+  "titleTicket": "New ticket",
+  "@titleTicket": {
+    "description": "titleTicket label"
+  },
+  "titleThread": "Ticket",
+  "@titleThread": {
+    "description": "titleThread label"
+  },
+  "titleRewards": "Rewards",
+  "@titleRewards": {
+    "description": "titleRewards label"
+  },
+  "titleReferral": "Refer a neighbour",
+  "@titleReferral": {
+    "description": "titleReferral label"
+  },
+  "titleRelocate": "Shift my line",
+  "@titleRelocate": {
+    "description": "titleRelocate label"
+  },
+  "titleSettings": "Settings",
+  "@titleSettings": {
+    "description": "titleSettings label"
+  },
+  "titleAccount": "My account",
+  "@titleAccount": {
+    "description": "titleAccount label"
+  },
+  "titleOffers": "Offers",
+  "@titleOffers": {
+    "description": "titleOffers label"
+  },
+  "currencySymbol": "Tk",
+  "@currencySymbol": {
+    "description": "currencySymbol label"
+  },
+  "mbpsUnit": "Mbps",
+  "@mbpsUnit": {
+    "description": "mbpsUnit label"
+  },
+  "pdfLabel": "PDF",
+  "@pdfLabel": {
+    "description": "pdfLabel label"
+  },
+  "signInTitle": "Sign in",
+  "@signInTitle": {
+    "description": "signInTitle label"
+  },
+  "tk": "Tk ",
+  "@tk": {
+    "description": "tk label"
+  },
+  "active": "Active",
+  "@active": {
+    "description": "active label"
+  },
+  "paidThroughThisCycleNothing": "Paid through this cycle. Nothing needs your attention.",
+  "@paidThroughThisCycleNothing": {
+    "description": "paidThroughThisCycleNothing label"
+  },
+  "gracePeriod": "Grace period",
+  "@gracePeriod": {
+    "description": "gracePeriod label"
+  },
+  "billOverdueServiceStaysOn": "Bill overdue — service stays on for 3 more days.",
+  "@billOverdueServiceStaysOn": {
+    "description": "billOverdueServiceStaysOn label"
+  },
+  "suspended": "Suspended",
+  "@suspended": {
+    "description": "suspended label"
+  },
+  "connectionSuspendedPayNowTo": "Connection suspended. Pay now to restore within 10 minutes.",
+  "@connectionSuspendedPayNowTo": {
+    "description": "connectionSuspendedPayNowTo label"
+  },
+  "gulshanHome": "Gulshan home",
+  "@gulshanHome": {
+    "description": "gulshanHome label"
+  },
+  "n28Sep": "28 Sep",
+  "@n28Sep": {
+    "description": "n28Sep label"
+  },
+  "bananiOffice": "Banani office",
+  "@bananiOffice": {
+    "description": "bananiOffice label"
+  },
+  "n02Oct": "02 Oct",
+  "@n02Oct": {
+    "description": "n02Oct label"
+  },
+  "n19Sep": "19 Sep",
+  "@n19Sep": {
+    "description": "n19Sep label"
+  },
+  "wiFi": "Wi-Fi",
+  "@wiFi": {
+    "description": "wiFi label"
+  },
+  "usage": "Usage",
+  "@usage": {
+    "description": "usage label"
+  },
+  "refer": "Refer",
+  "@refer": {
+    "description": "refer label"
+  },
+  "shiftLine": "Shift line",
+  "@shiftLine": {
+    "description": "shiftLine label"
+  },
+  "bill": "Bill",
+  "@bill": {
+    "description": "bill label"
+  },
+  "plans": "Plans",
+  "@plans": {
+    "description": "plans label"
+  },
+  "popular": "Popular",
+  "@popular": {
+    "description": "popular label"
+  },
+  "household": "Household",
+  "@household": {
+    "description": "household label"
+  },
+  "workFromHome": "Work from home",
+  "@workFromHome": {
+    "description": "workFromHome label"
+  },
+  "switchLabel": "Switch",
+  "@switchLabel": {
+    "description": "switch label"
+  },
+  "daysLeftInCycle": "Days left in cycle",
+  "@daysLeftInCycle": {
+    "description": "daysLeftInCycle label"
+  },
+  "creditForUnusedDays": "Credit for unused days",
+  "@creditForUnusedDays": {
+    "description": "creditForUnusedDays label"
+  },
+  "newPlan22Days": "New plan, 22 days",
+  "@newPlan22Days": {
+    "description": "newPlan22Days label"
+  },
+  "dueToday": "Due today",
+  "@dueToday": {
+    "description": "dueToday label"
+  },
+  "fromNextCycle": "From next cycle",
+  "@fromNextCycle": {
+    "description": "fromNextCycle label"
+  },
+  "month": " / month",
+  "@month": {
+    "description": "month label"
+  },
+  "bankTransfer": "Bank transfer",
+  "@bankTransfer": {
+    "description": "bankTransfer label"
+  },
+  "n3DaysBeforeDue": "3 days before due",
+  "@n3DaysBeforeDue": {
+    "description": "n3DaysBeforeDue label"
+  },
+  "onTheDueDate": "On the due date",
+  "@onTheDueDate": {
+    "description": "onTheDueDate label"
+  },
+  "n1stOfTheMonth": "1st of the month",
+  "@n1stOfTheMonth": {
+    "description": "n1stOfTheMonth label"
+  },
+  "mon": "Mon",
+  "@mon": {
+    "description": "mon label"
+  },
+  "tue": "Tue",
+  "@tue": {
+    "description": "tue label"
+  },
+  "wed": "Wed",
+  "@wed": {
+    "description": "wed label"
+  },
+  "thu": "Thu",
+  "@thu": {
+    "description": "thu label"
+  },
+  "fri": "Fri",
+  "@fri": {
+    "description": "fri label"
+  },
+  "sat": "Sat",
+  "@sat": {
+    "description": "sat label"
+  },
+  "sun": "Sun",
+  "@sun": {
+    "description": "sun label"
+  },
+  "days": " days",
+  "@days": {
+    "description": "days label"
+  },
+  "noConnection": "No connection",
+  "@noConnection": {
+    "description": "noConnection label"
+  },
+  "slowSpeed": "Slow speed",
+  "@slowSpeed": {
+    "description": "slowSpeed label"
+  },
+  "frequentDrops": "Frequent drops",
+  "@frequentDrops": {
+    "description": "frequentDrops label"
+  },
+  "billingQuestion": "Billing question",
+  "@billingQuestion": {
+    "description": "billingQuestion label"
+  },
+  "both": "Both",
+  "@both": {
+    "description": "both label"
+  },
+  "rahimIphone": "Rahim iPhone",
+  "@rahimIphone": {
+    "description": "rahimIphone label"
+  },
+  "livingRoomTv": "Living room TV",
+  "@livingRoomTv": {
+    "description": "livingRoomTv label"
+  },
+  "workLaptop": "Work laptop",
+  "@workLaptop": {
+    "description": "workLaptop label"
+  },
+  "gateCamera": "Gate camera",
+  "@gateCamera": {
+    "description": "gateCamera label"
+  },
+  "unknownDevice": "Unknown device",
+  "@unknownDevice": {
+    "description": "unknownDevice label"
+  },
+  "unblock": "Unblock",
+  "@unblock": {
+    "description": "unblock label"
+  },
+  "block": "Block",
+  "@block": {
+    "description": "block label"
+  },
+  "deviceAllowedAgain": "Device allowed again.",
+  "@deviceAllowedAgain": {
+    "description": "deviceAllowedAgain label"
+  },
+  "deviceBlockedOnThisNetwork": "Device blocked on this network.",
+  "@deviceBlockedOnThisNetwork": {
+    "description": "deviceBlockedOnThisNetwork label"
+  },
+  "slowSpeedAfter9pm": "Slow speed after 9pm",
+  "@slowSpeedAfter9pm": {
+    "description": "slowSpeedAfter9pm label"
+  },
+  "inProgress": "In progress",
+  "@inProgress": {
+    "description": "inProgress label"
+  },
+  "n2Sep2026": "2 Sep 2026",
+  "@n2Sep2026": {
+    "description": "n2Sep2026 label"
+  },
+  "n3Replies": "3 replies",
+  "@n3Replies": {
+    "description": "n3Replies label"
+  },
+  "routerReplacement": "Router replacement",
+  "@routerReplacement": {
+    "description": "routerReplacement label"
+  },
+  "closed": "Closed",
+  "@closed": {
+    "description": "closed label"
+  },
+  "n14Aug2026": "14 Aug 2026",
+  "@n14Aug2026": {
+    "description": "n14Aug2026 label"
+  },
+  "n6Replies": "6 replies",
+  "@n6Replies": {
+    "description": "n6Replies label"
+  },
+  "you": "You",
+  "@you": {
+    "description": "you label"
+  },
+  "speedDropsBelow10Mbps": "Speed drops below 10 Mbps every night after 9pm. Router is 2 metres away.",
+  "@speedDropsBelow10Mbps": {
+    "description": "speedDropsBelow10Mbps label"
+  },
+  "thanksWeCanSeeCongestion": "Thanks — we can see congestion on your OLT port. Escalating to the field team tonight.",
+  "@thanksWeCanSeeCongestion": {
+    "description": "thanksWeCanSeeCongestion label"
+  },
+  "portReBalancedPleaseRun": "Port re-balanced. Please run a speed test after 9pm today and tell us what you see.",
+  "@portReBalancedPleaseRun": {
+    "description": "portReBalancedPleaseRun label"
+  },
+  "tk50BillCredit": "Tk 50 bill credit",
+  "@tk50BillCredit": {
+    "description": "tk50BillCredit label"
+  },
+  "tk100BillCredit": "Tk 100 bill credit",
+  "@tk100BillCredit": {
+    "description": "tk100BillCredit label"
+  },
+  "tk200BillCredit": "Tk 200 bill credit",
+  "@tk200BillCredit": {
+    "description": "tk200BillCredit label"
+  },
+  "gamingRouteOneMonth": "Gaming route, one month",
+  "@gamingRouteOneMonth": {
+    "description": "gamingRouteOneMonth label"
+  },
+  "appliesToYourNextBill": "Applies to your next bill",
+  "@appliesToYourNextBill": {
+    "description": "appliesToYourNextBill label"
+  },
+  "notEnoughPointsYet": "Not enough points yet",
+  "@notEnoughPointsYet": {
+    "description": "notEnoughPointsYet label"
+  },
+  "shahinRoad141": "Shahin (Road 141)",
+  "@shahinRoad141": {
+    "description": "shahinRoad141 label"
+  },
+  "lineLive22Aug": "Line live 22 Aug",
+  "@lineLive22Aug": {
+    "description": "lineLive22Aug label"
+  },
+  "paidOut": "Paid out",
+  "@paidOut": {
+    "description": "paidOut label"
+  },
+  "nusratRoad144": "Nusrat (Road 144)",
+  "@nusratRoad144": {
+    "description": "nusratRoad144 label"
+  },
+  "surveyBooked3Sep": "Survey booked 3 Sep",
+  "@surveyBooked3Sep": {
+    "description": "surveyBooked3Sep label"
+  },
+  "imranBanani": "Imran (Banani)",
+  "@imranBanani": {
+    "description": "imranBanani label"
+  },
+  "codeUsed28Aug": "Code used 28 Aug",
+  "@codeUsed28Aug": {
+    "description": "codeUsed28Aug label"
+  },
+  "expired": "Expired",
+  "@expired": {
+    "description": "expired label"
+  },
+  "gulshan2": "Gulshan 2",
+  "@gulshan2": {
+    "description": "gulshan2 label"
+  },
+  "bananiDohs": "Banani DOHS",
+  "@bananiDohs": {
+    "description": "bananiDohs label"
+  },
+  "bashundharaRA": "Bashundhara R/A",
+  "@bashundharaRA": {
+    "description": "bashundharaRA label"
+  },
+  "savarOutside": "Savar (outside)",
+  "@savarOutside": {
+    "description": "savarOutside label"
+  },
+  "covered": "Covered",
+  "@covered": {
+    "description": "covered label"
+  },
+  "surveyNeeded": "Survey needed",
+  "@surveyNeeded": {
+    "description": "surveyNeeded label"
+  },
+  "billReminders": "Bill reminders",
+  "@billReminders": {
+    "description": "billReminders label"
+  },
+  "n3DaysBeforeTheDue": "3 days before the due date",
+  "@n3DaysBeforeTheDue": {
+    "description": "n3DaysBeforeTheDue label"
+  },
+  "paymentReceipts": "Payment receipts",
+  "@paymentReceipts": {
+    "description": "paymentReceipts label"
+  },
+  "pushAndSms": "Push and SMS",
+  "@pushAndSms": {
+    "description": "pushAndSms label"
+  },
+  "outageMaintenance": "Outage & maintenance",
+  "@outageMaintenance": {
+    "description": "outageMaintenance label"
+  },
+  "onlyForYourArea": "Only for your area",
+  "@onlyForYourArea": {
+    "description": "onlyForYourArea label"
+  },
+  "ticketReplies": "Ticket replies",
+  "@ticketReplies": {
+    "description": "ticketReplies label"
+  },
+  "whenAnEngineerResponds": "When an engineer responds",
+  "@whenAnEngineerResponds": {
+    "description": "whenAnEngineerResponds label"
+  },
+  "offersCampaigns": "Offers & campaigns",
+  "@offersCampaigns": {
+    "description": "offersCampaigns label"
+  },
+  "atMostTwiceAMonth": "At most twice a month",
+  "@atMostTwiceAMonth": {
+    "description": "atMostTwiceAMonth label"
+  },
+  "ofWord": " of ",
+  "@ofWord": {
+    "description": "of label"
+  },
+  "connections": " connections",
+  "@connections": {
+    "description": "connections label"
+  },
+  "totalDue": "Total due",
+  "@totalDue": {
+    "description": "totalDue label"
+  },
+  "needsAction": "Needs action",
+  "@needsAction": {
+    "description": "needsAction label"
+  },
+  "privacyTerms": "Privacy & terms",
+  "@privacyTerms": {
+    "description": "privacyTerms label"
+  },
+  "lineS": " line(s) · ",
+  "@lineS": {
+    "description": "lineS label"
+  },
+  "notSetUp": "Not set up",
+  "@notSetUp": {
+    "description": "notSetUp label"
+  },
+  "autopayCharges": "Autopay charges ",
+  "@autopayCharges": {
+    "description": "autopayCharges label"
+  },
+  "bandwidth": "Bandwidth",
+  "@bandwidth": {
+    "description": "bandwidth label"
+  },
+  "mbpsUpDown": " Mbps up / down",
+  "@mbpsUpDown": {
+    "description": "mbpsUpDown label"
+  },
+  "monthly": "Monthly",
+  "@monthly": {
+    "description": "monthly label"
+  },
+  "inclVat": " incl. VAT",
+  "@inclVat": {
+    "description": "inclVat label"
+  },
+  "dataCap": "Data cap",
+  "@dataCap": {
+    "description": "dataCap label"
+  },
+  "unmetered": "Unmetered",
+  "@unmetered": {
+    "description": "unmetered label"
+  },
+  "expires": "Expires",
+  "@expires": {
+    "description": "expires label"
+  },
+  "n2026641Pm": " 2026, 6:41 PM",
+  "@n2026641Pm": {
+    "description": "n2026641Pm label"
+  },
+  "n24HoursHotline16335": "24 hours, hotline 16335",
+  "@n24HoursHotline16335": {
+    "description": "n24HoursHotline16335 label"
+  },
+  "contract": "Contract",
+  "@contract": {
+    "description": "contract label"
+  },
+  "rollingMonthly": "Rolling monthly",
+  "@rollingMonthly": {
+    "description": "rollingMonthly label"
+  },
+  "appliesWithin30MinutesOn": " applies within 30 minutes on ",
+  "@appliesWithin30MinutesOn": {
+    "description": "appliesWithin30MinutesOn label"
+  },
+  "total": "Total",
+  "@total": {
+    "description": "total label"
+  },
+  "testingDownload": "Testing download",
+  "@testingDownload": {
+    "description": "testingDownload label"
+  },
+  "ready": "Ready",
+  "@ready": {
+    "description": "ready label"
+  },
+  "serverDhakaGulshanPop": "Server: Dhaka · Gulshan POP",
+  "@serverDhakaGulshanPop": {
+    "description": "serverDhakaGulshanPop label"
+  },
+  "ping": "Ping",
+  "@ping": {
+    "description": "ping label"
+  },
+  "jitter": "Jitter",
+  "@jitter": {
+    "description": "jitter label"
+  },
+  "testing": "Testing…",
+  "@testing": {
+    "description": "testing label"
+  },
+  "testAgain": "Test again",
+  "@testAgain": {
+    "description": "testAgain label"
+  },
+  "startTest": "Start test",
+  "@startTest": {
+    "description": "startTest label"
+  },
+  "hideLabel": "Hide",
+  "@hideLabel": {
+    "description": "hide label"
+  },
+  "showLabel": "Show",
+  "@showLabel": {
+    "description": "show label"
+  },
+  "noChangesToSave": "No changes to save",
+  "@noChangesToSave": {
+    "description": "noChangesToSave label"
+  },
+  "saveAndReconnectDevices": "Save and reconnect devices",
+  "@saveAndReconnectDevices": {
+    "description": "saveAndReconnectDevices label"
+  },
+  "networkUpdatedDevicesReconnectIn": "Network updated — devices reconnect in a moment.",
+  "@networkUpdatedDevicesReconnectIn": {
+    "description": "networkUpdatedDevicesReconnectIn label"
+  },
+  "fibrelineGuestNoLanAccess": "Fibreline_Guest · no LAN access",
+  "@fibrelineGuestNoLanAccess": {
+    "description": "fibrelineGuestNoLanAccess label"
+  },
+  "offVisitorsUseTheMain": "Off — visitors use the main network",
+  "@offVisitorsUseTheMain": {
+    "description": "offVisitorsUseTheMain label"
+  },
+  "active2": " active · ",
+  "@active2": {
+    "description": "active2 label"
+  },
+  "blocked": " blocked",
+  "@blocked": {
+    "description": "blocked label"
+  },
+  "cannotReachTheLine": "Cannot reach the line",
+  "@cannotReachTheLine": {
+    "description": "cannotReachTheLine label"
+  },
+  "noFaultOnYourLine": "No fault on your line",
+  "@noFaultOnYourLine": {
+    "description": "noFaultOnYourLine label"
+  },
+  "hotline": "Hotline",
+  "@hotline": {
+    "description": "hotline label"
+  },
+  "phone": "Phone",
+  "@phone": {
+    "description": "phone label"
+  },
+  "liveChat": "Live chat",
+  "@liveChat": {
+    "description": "liveChat label"
+  },
+  "usuallyRepliesIn4Min": "Usually replies in 4 min",
+  "@usuallyRepliesIn4Min": {
+    "description": "usuallyRepliesIn4Min label"
+  },
+  "replyWithin2Hours": "Reply within 2 hours",
+  "@replyWithin2Hours": {
+    "description": "replyWithin2Hours label"
+  },
+  "justNow": "Just now",
+  "@justNow": {
+    "description": "justNow label"
+  },
+  "redeem2": "Redeem ",
+  "@redeem2": {
+    "description": "redeem2 label"
+  },
+  "points": " points",
+  "@points": {
+    "description": "points label"
+  },
+  "chooseAReward": "Choose a reward",
+  "@chooseAReward": {
+    "description": "chooseAReward label"
+  },
+  "appliedToYourNextBill": " applied to your next bill.",
+  "@appliedToYourNextBill": {
+    "description": "appliedToYourNextBill label"
+  },
+  "referralShahin": "Referral — Shahin",
+  "@referralShahin": {
+    "description": "referralShahin label"
+  },
+  "n22Aug2026": "22 Aug 2026",
+  "@n22Aug2026": {
+    "description": "n22Aug2026 label"
+  },
+  "onTimePayment": "On-time payment",
+  "@onTimePayment": {
+    "description": "onTimePayment label"
+  },
+  "n10Aug2026": "10 Aug 2026",
+  "@n10Aug2026": {
+    "description": "n10Aug2026 label"
+  },
+  "redeemedTk50Credit": "Redeemed Tk 50 credit",
+  "@redeemedTk50Credit": {
+    "description": "redeemedTk50Credit label"
+  },
+  "n2Aug2026": "2 Aug 2026",
+  "@n2Aug2026": {
+    "description": "n2Aug2026 label"
+  },
+  "anniversaryBonus": "Anniversary bonus",
+  "@anniversaryBonus": {
+    "description": "anniversaryBonus label"
+  },
+  "n11Mar2026": "11 Mar 2026",
+  "@n11Mar2026": {
+    "description": "n11Mar2026 label"
+  },
+  "codeCopied": "Code copied",
+  "@codeCopied": {
+    "description": "codeCopied label"
+  },
+  "copyCode": "Copy code",
+  "@copyCode": {
+    "description": "copyCode label"
+  },
+  "rahim4x2CopiedToThe": "RAHIM-4X2 copied to the clipboard.",
+  "@rahim4x2CopiedToThe": {
+    "description": "rahim4x2CopiedToThe label"
+  },
+  "invitesUsed": "Invites used",
+  "@invitesUsed": {
+    "description": "invitesUsed label"
+  },
+  "pointsEarned": "Points earned",
+  "@pointsEarned": {
+    "description": "pointsEarned label"
+  },
+  "address": "Address",
+  "@address": {
+    "description": "address label"
+  },
+  "road144GulshanDhaka": "Road 144, Gulshan, Dhaka",
+  "@road144GulshanDhaka": {
+    "description": "road144GulshanDhaka label"
+  },
+  "activeLines": " active lines",
+  "@activeLines": {
+    "description": "activeLines label"
+  },
+  "routerMac": "Router MAC",
+  "@routerMac": {
+    "description": "routerMac label"
+  },
+  "installed": "Installed",
+  "@installed": {
+    "description": "installed label"
+  },
+  "n11Mar2024": "11 Mar 2024",
+  "@n11Mar2024": {
+    "description": "n11Mar2024 label"
+  },
+  "creditedTo410233ServiceRuns": " credited to 410233. Service runs to 28 Oct.",
+  "@creditedTo410233ServiceRuns": {
+    "description": "creditedTo410233ServiceRuns label"
+  },
+  "n10Aug1222Am": "10 Aug, 12:22 AM",
+  "@n10Aug1222Am": {
+    "description": "n10Aug1222Am label"
+  },
+  "billDueTomorrow": "Bill due tomorrow",
+  "@billDueTomorrow": {
+    "description": "billDueTomorrow label"
+  },
+  "n27Jul1047Am": "27 Jul, 10:47 AM",
+  "@n27Jul1047Am": {
+    "description": "n27Jul1047Am label"
+  },
+  "plannedMaintenance": "Planned maintenance",
+  "@plannedMaintenance": {
+    "description": "plannedMaintenance label"
+  },
+  "gulshanZone24Am": "Gulshan zone, 2–4 AM Friday. Brief drops expected.",
+  "@gulshanZone24Am": {
+    "description": "gulshanZone24Am label"
+  },
+  "n20Jul602Pm": "20 Jul, 6:02 PM",
+  "@n20Jul602Pm": {
+    "description": "n20Jul602Pm label"
+  },
+  "ticket4189Closed": "Ticket #4189 closed",
+  "@ticket4189Closed": {
+    "description": "ticket4189Closed label"
+  },
+  "routerReplacedOnSiteRate": "Router replaced on site. Rate the visit.",
+  "@routerReplacedOnSiteRate": {
+    "description": "routerReplacedOnSiteRate label"
+  },
+  "n14Aug330Pm": "14 Aug, 3:30 PM",
+  "@n14Aug330Pm": {
+    "description": "n14Aug330Pm label"
+  },
+  "referral": "Referral",
+  "@referral": {
+    "description": "referral label"
+  },
+  "n20OffForTwo": "20% off for two",
+  "@n20OffForTwo": {
+    "description": "n20OffForTwo label"
+  },
+  "referANeighbourYouBoth": "Refer a neighbour; you both get one month at 20% off once their line is live.",
+  "@referANeighbourYouBoth": {
+    "description": "referANeighbourYouBoth label"
+  },
+  "upgrade": "Upgrade",
+  "@upgrade": {
+    "description": "upgrade label"
+  },
+  "samePriceMoreSpeed": "Same price, more speed",
+  "@samePriceMoreSpeed": {
+    "description": "samePriceMoreSpeed label"
+  },
+  "cheetahPrimeAt100Mbps": "Cheetah Prime at 100 Mbps for your current price until December.",
+  "@cheetahPrimeAt100Mbps": {
+    "description": "cheetahPrimeAt100Mbps label"
+  },
+  "gaming": "Gaming",
+  "@gaming": {
+    "description": "gaming label"
+  },
+  "lowLatencyRouting": "Low-latency routing",
+  "@lowLatencyRouting": {
+    "description": "lowLatencyRouting label"
+  },
+  "addTheGamingRouteFor": "Add the gaming route for Tk 150 / month — regional peering, no data cap.",
+  "@addTheGamingRouteFor": {
+    "description": "addTheGamingRouteFor label"
+  },
+  "n28Jul2026": "28 Jul 2026",
+  "@n28Jul2026": {
+    "description": "n28Jul2026 label"
+  },
+  "n27Jun2026": "27 Jun 2026",
+  "@n27Jun2026": {
+    "description": "n27Jun2026 label"
+  },
+  "n28May2026": "28 May 2026",
+  "@n28May2026": {
+    "description": "n28May2026 label"
+  },
+  "n28Apr2026": "28 Apr 2026",
+  "@n28Apr2026": {
+    "description": "n28Apr2026 label"
+  },
+  "payWith": "Pay with ",
+  "@payWith": {
+    "description": "payWith label"
+  },
+  "chooseAPaymentMethod": "Choose a payment method",
+  "@chooseAPaymentMethod": {
+    "description": "chooseAPaymentMethod label"
+  },
+  "paid": "Paid",
+  "@paid": {
+    "description": "paid label"
+  },
+  "n5Sep2026812": "5 Sep 2026, 8:12 PM",
+  "@n5Sep2026812": {
+    "description": "n5Sep2026812 label"
+  },
+  "restartTheRouter": "Restart the router?",
+  "@restartTheRouter": {
+    "description": "restartTheRouter label"
+  },
+  "everyDeviceDropsForAbout": "Every device drops for about 90 seconds. Calls and streams will cut out.",
+  "@everyDeviceDropsForAbout": {
+    "description": "everyDeviceDropsForAbout label"
+  },
+  "restartNow": "Restart now",
+  "@restartNow": {
+    "description": "restartNow label"
+  },
+  "routerRestartingBackInAbout": "Router restarting — back in about 90 seconds.",
+  "@routerRestartingBackInAbout": {
+    "description": "routerRestartingBackInAbout label"
+  },
+  "navBill": "Bill",
+  "@navBill": {
+    "description": "navBill label"
+  },
+  "navPlans": "Plans",
+  "@navPlans": {
+    "description": "navPlans label"
+  },
+  "navWifi": "Wi-Fi",
+  "@navWifi": {
+    "description": "navWifi label"
+  },
+  "navSupport": "Support",
+  "@navSupport": {
+    "description": "navSupport label"
+  },
+  "serviceRunsToDate": "Service runs to {date}",
+  "@serviceRunsToDate": {
+    "description": "Receipt footnote naming the paid-through date",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "newPlanDays": "New plan, {days} days",
+  "@newPlanDays": {
+    "description": "Pro-rata row for the incoming plan",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "campaignImagePlaceholder": "Campaign image placeholder",
+  "@campaignImagePlaceholder": {
+    "description": "campaignImagePlaceholder label"
+  },
+  "codeCopiedToClipboard": "{code} copied to the clipboard.",
+  "@codeCopiedToClipboard": {
+    "description": "Toast after copying the referral code",
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "speedVerdict": "You are getting {percent}% of your {plan} Mbps plan over Wi-Fi. Nothing to fix.",
+  "@speedVerdict": {
+    "description": "Speed test verdict",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      },
+      "plan": {
+        "type": "int"
+      }
+    }
+  },
+  "guestNetworkOn": "{ssid} · no LAN access",
+  "@guestNetworkOn": {
+    "description": "Guest network subtitle when enabled",
+    "placeholders": {
+      "ssid": {
+        "type": "String"
+      }
+    }
+  },
+  "repliesCount": "{count, plural, =0{no replies} =1{1 reply} other{{count} replies}}",
+  "@repliesCount": {
+    "description": "Reply count on a support ticket",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "ticketOpenNumber": "Ticket #{id} open",
+  "@ticketOpenNumber": {
+    "description": "Confirmation heading after raising a ticket",
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  }
+}

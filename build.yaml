@@ -1,0 +1,30 @@
+global_options:
+  # Retrofit decides how to serialise a `@Body()` by looking for a `toJson()`
+  # on the type. Our request models are freezed + json_serializable, so that
+  # method does not exist until json_serializable has run — and if retrofit
+  # goes first it emits `final _data = request;` instead of
+  # `request.toJson()`, along with a "must provide a toJson()" warning.
+  #
+  # Dio happens to rescue that at runtime (its transformer calls `jsonEncode`,
+  # which invokes `toJson()` itself), but relying on that is a coincidence, not
+  # a contract. Pin the order instead.
+  json_serializable:
+    runs_before:
+      - retrofit_generator:retrofit_generator
+
+targets:
+  $default:
+    builders:
+      # The billing backend is snake_case on the wire throughout, and Dart is
+      # camelCase throughout. Renaming here rather than per class is what keeps
+      # a new DTO from silently parsing to nulls because somebody forgot a
+      # `@JsonKey`.
+      #
+      # Note: annotating a freezed class with `@JsonSerializable(fieldRename:)`
+      # does NOT work — json_serializable reads the abstract class, finds no
+      # fields, and emits an empty deserialiser without complaint. Configure it
+      # here; override an individual field with `@JsonKey(name: ...)`.
+      json_serializable:
+        options:
+          field_rename: snake
+          explicit_to_json: true

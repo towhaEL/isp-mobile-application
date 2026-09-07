@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-19901662-ed54-496f-a8e6-6498d6253c79/styles.css">
+<script src="_ds/industry-19901662-ed54-496f-a8e6-6498d6253c79/_ds_bundle.js"></script>
+<style>
+a{color:var(--color-accent-700)}
+a:hover{color:var(--color-accent-900)}
+.tl-tile{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:10px;min-height:84px;padding:11px;background:var(--color-accent-100);border:0;border-right:1px solid var(--color-accent-200);border-bottom:1px solid var(--color-accent-200);cursor:pointer;font-family:var(--font-body);color:var(--color-accent-900);text-align:left}
+.tl-tile:hover{background:var(--color-accent-200)}
+.tl-tile:active{background:var(--color-accent-300)}
+.tl-row{display:flex;align-items:center;gap:12px;width:100%;padding:13px 0;background:transparent;border:0;border-bottom:1px solid var(--color-divider);cursor:pointer;font-family:var(--font-body);font-size:14px;color:var(--color-text);text-align:left;min-height:50px}
+.tl-row:hover{background:var(--color-accent-100)}
+.tl-nav{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:58px;background:transparent;border:0;cursor:pointer;font-family:var(--font-heading);font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.tl-seg{flex:1;min-height:40px;background:transparent;border:0;cursor:pointer;font-family:var(--font-heading);font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase}
+.tl-conn{display:flex;align-items:center;gap:12px;width:100%;min-height:60px;padding:10px 14px;background:transparent;border:0;border-bottom:1px solid rgba(242,242,243,.18);cursor:pointer;font-family:var(--font-body);color:#f2f2f3;text-align:left}
+.tl-conn:hover{background:rgba(242,242,243,.08)}
+.tl-sw{position:relative;width:46px;height:26px;flex:none;padding:0;border:1px solid var(--color-accent);background:transparent;cursor:pointer}
+.tl-sw span{position:absolute;top:2px;width:20px;height:20px;background:var(--color-accent);transition:left .12s linear}
+.tl-opt{display:flex;align-items:center;gap:10px;min-height:50px;padding:0 12px;cursor:pointer;font-family:var(--font-body);font-size:14px;text-align:left;color:var(--color-text)}
+.tl-in{font-family:var(--font-body)}
+</style>
+</helmet>
+
+<x-import component-from-global-scope="AndroidDevice" from="./android-frame.jsx" width="{{ 412 }}" height="{{ 892 }}" hint-size="412px,892px">
+
+  <sc-if value="{{ isAuth }}">
+    <div style="height:100%;display:flex;flex-direction:column;background:var(--color-accent-900);color:#f2f2f3;font-family:var(--font-body)">
+      <div style="padding:52px 22px 26px">
+        <div style="width:34px;height:34px;border:1.5px solid var(--color-accent-300);display:grid;place-items:center;margin-bottom:18px">
+          <span style="width:12px;height:12px;background:var(--color-accent-300)"></span>
+        </div>
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:34px;line-height:1.05">{{ brand }}</div>
+        <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent-300);margin-top:4px">{{ t.selfcare }}</div>
+      </div>
+
+      <div style="flex:1;background:var(--color-bg);color:var(--color-text);padding:22px">
+        <sc-if value="{{ isLogin }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="font-family:var(--font-heading);font-weight:600;font-size:23px;margin-bottom:16px">{{ t.signIn }}</div>
+            <div class="field" style="margin-bottom:14px">
+              <label for="li-id">{{ t.customerId }}</label>
+              <input class="input tl-in" id="li-id" value="{{ loginId }}" onChange="{{ setLoginId }}">
+            </div>
+            <div class="field" style="margin-bottom:6px">
+              <label for="li-pw">{{ t.password }}</label>
+              <input class="input tl-in" id="li-pw" type="password" placeholder="••••••••" value="{{ loginPw }}" onChange="{{ setLoginPw }}">
+            </div>
+            <sc-if value="{{ loginError }}">
+              <div style="display:flex;align-items:center;gap:8px;background:var(--color-accent-100);border-left:3px solid var(--color-accent);padding:9px 11px;margin-bottom:6px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-800)" stroke-width="1.5"><path d="M12 8v5M12 17h.01M10.3 4l-7 12a2 2 0 0 0 1.7 3h14a2 2 0 0 0 1.7-3l-7-12a2 2 0 0 0-3.4 0"></path></svg>
+                <span style="font-size:12.5px;color:var(--color-accent-900)">{{ t.loginErr }}</span>
+              </div>
+            </sc-if>
+            <div style="display:flex;justify-content:flex-end;margin-bottom:16px">
+              <a href="#" style="font-size:12.5px">{{ t.forgot }}</a>
+            </div>
+            <button class="btn btn-primary btn-block blueprint" style="min-height:52px;font-size:15px" onClick="{{ doLogin }}">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              {{ t.signIn }}
+            </button>
+            <div style="display:flex;align-items:center;gap:12px;margin:18px 0">
+              <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+              <span style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-neutral-600)">{{ t.or }}</span>
+              <span style="flex:1;height:1px;background:var(--color-divider)"></span>
+            </div>
+            <button class="btn btn-secondary btn-block" style="min-height:50px" onClick="{{ goOtp }}">{{ t.otpInstead }}</button>
+            <p style="font-size:12px;color:var(--color-neutral-600);margin-top:18px">{{ t.newHere }} <a href="#">{{ t.applyLine }}</a></p>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isOtp }}">
+          <div>
+            <div style="font-family:var(--font-heading);font-weight:600;font-size:23px">{{ t.enterCode }}</div>
+            <p style="font-size:13px;color:var(--color-neutral-700);margin:6px 0 20px">{{ t.codeSent }}</p>
+            <div style="display:flex;gap:8px;margin-bottom:8px">
+              <sc-for list="{{ otpBoxes }}" as="b" hint-placeholder-count="6">
+                <div style="flex:1;height:56px;display:grid;place-items:center;border:1px solid {{ b.border }};background:{{ b.bg }};font-family:var(--font-heading);font-weight:600;font-size:26px;color:var(--color-accent-900)">{{ b.ch }}</div>
+              </sc-for>
+            </div>
+            <input class="input tl-in" style="letter-spacing:.5em;text-align:center;font-size:18px;margin-bottom:14px" inputMode="numeric" placeholder="000000" value="{{ otp }}" onChange="{{ setOtp }}">
+            <button class="btn btn-primary btn-block blueprint" style="min-height:52px;font-size:15px" disabled="{{ otpDisabled }}" onClick="{{ doLogin }}">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              {{ t.verify }}
+            </button>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:14px">
+              <span style="font-size:12.5px;color:var(--color-neutral-600)">{{ t.resendIn }}</span>
+              <button class="btn btn-ghost" style="min-height:44px" onClick="{{ goLogin }}">{{ t.useId }}</button>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isApp }}" hint-placeholder-val="{{ true }}">
+  <div style="position:relative;height:100%;display:flex;flex-direction:column;background:var(--color-bg);font-family:var(--font-body)">
+
+    <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--color-accent-900);color:#f2f2f3">
+      <button class="btn btn-icon" style="border-color:rgba(242,242,243,.3);color:#f2f2f3;background:transparent" onClick="{{ openDrawer }}" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+      <div style="flex:1;min-width:0">
+        <div style="font-family:var(--font-heading);font-weight:600;font-size:17px;line-height:1.1;letter-spacing:.01em">{{ brand }}</div>
+        <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-300)">{{ screenTitle }}</div>
+      </div>
+      <button class="btn btn-icon" style="border-color:rgba(242,242,243,.3);color:#f2f2f3;background:transparent;position:relative" onClick="{{ goNotifications }}" aria-label="Notifications">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg>
+        <sc-if value="{{ hasUnread }}" hint-placeholder-val="{{ true }}">
+          <span style="position:absolute;top:4px;right:4px;width:8px;height:8px;background:var(--color-accent-300)"></span>
+        </sc-if>
+      </button>
+    </div>
+
+    <sc-if value="{{ offline }}">
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;background:var(--color-neutral-300);color:var(--color-neutral-900)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 2l20 20M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 4-2.5M19 13a10 10 0 0 0-7-3M12 20h.01"></path></svg>
+        <span style="font-size:12px;letter-spacing:.04em">{{ t.offlineNote }}</span>
+      </div>
+    </sc-if>
+
+    <div style="flex:1;overflow:auto">
+
+      <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <div style="background:var(--color-accent-900);color:#f2f2f3;padding:2px 0 0">
+            <button style="display:flex;align-items:center;gap:12px;width:100%;padding:12px 16px 14px;background:transparent;border:0;border-bottom:1px solid rgba(242,242,243,.18);cursor:pointer;text-align:left;color:#f2f2f3;font-family:var(--font-body)" onClick="{{ toggleConn }}">
+              <span style="flex:1;min-width:0">
+                <span style="display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-300)">{{ t.connection }} {{ connIndexLabel }}</span>
+                <span style="display:block;font-family:var(--font-heading);font-weight:600;font-size:24px;line-height:1.15">{{ conn.label }}</span>
+                <span style="display:block;font-size:11.5px;color:var(--color-accent-300)">{{ conn.id }} · {{ conn.plan }}</span>
+              </span>
+              <span style="display:flex;align-items:center;gap:8px">
+                <span class="tag" style="background:{{ conn.tagBg }};color:{{ conn.tagFg }};font-size:10px;letter-spacing:.08em;text-transform:uppercase">{{ conn.statusLabel }}</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="transform:{{ chevron }}"><path d="m6 9 6 6 6-6"></path></svg>
+              </span>
+            </button>
+
+            <sc-if value="{{ connOpen }}">
+              <div style="background:var(--color-accent-800)">
+                <sc-for list="{{ connections }}" as="c" hint-placeholder-count="3">
+                  <button class="tl-conn" style="background:{{ c.rowBg }}" onClick="{{ c.pick }}">
+                    <span style="width:12px;height:12px;border:1.5px solid var(--color-accent-300);background:{{ c.dot }};flex:none"></span>
+                    <span style="flex:1;min-width:0">
+                      <span style="display:block;font-family:var(--font-heading);font-weight:600;font-size:16px">{{ c.label }}</span>
+                      <span style="display:block;font-size:11.5px;color:var(--color-accent-300)">{{ c.id }} · {{ c.speed }} Mbps · {{ c.dueLabel }}</span>
+                    </span>
+                    <span class="tag" style="background:{{ c.tagBg }};color:{{ c.tagFg }};font-size:10px;text-transform:uppercase">{{ c.statusLabel }}</span>
+                  </button>
+                </sc-for>
+                <button class="tl-conn" style="border-bottom:0" onClick="{{ closeConn }}">
+                  <span style="width:12px;height:12px;flex:none;display:flex;align-items:center;justify-content:center">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12h14"></path></svg>
+                  </span>
+                  <span style="flex:1;font-family:var(--font-heading);font-weight:600;font-size:15px">{{ t.linkAnother }}</span>
+                </button>
+              </div>
+            </sc-if>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(242,242,243,.18)">
+              <sc-for list="{{ portfolio }}" as="p" hint-placeholder-count="3">
+                <div style="background:var(--color-accent-900);padding:12px 14px">
+                  <div style="font-family:var(--font-heading);font-weight:600;font-size:22px;line-height:1">{{ p.v }}</div>
+                  <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-300)">{{ p.k }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="padding:16px">
+            <div class="blueprint" style="padding:16px;border-color:var(--color-accent-300);margin-bottom:20px">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px">
+                <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">{{ conn.label }} · {{ t.due }}</div>
+                <span class="tag tag-outline" style="font-size:10px;text-transform:uppercase">{{ conn.plan }}</span>
+              </div>
+              <div style="display:flex;align-items:flex-end;gap:10px;margin-bottom:8px">
+                <span style="font-family:var(--font-heading);font-weight:600;font-size:46px;line-height:.9;color:var(--color-accent-800)">{{ conn.dueFmt }}</span>
+                <span style="font-size:12.5px;padding-bottom:6px;color:var(--color-neutral-700)">{{ t.by }} {{ conn.dueDate }}</span>
+              </div>
+              <div style="font-size:12.5px;color:var(--color-neutral-700);margin-bottom:14px">{{ statusNote }}</div>
+              <div style="display:flex;gap:8px">
+                <button class="btn btn-primary blueprint" style="flex:1;min-height:50px;font-size:15px" onClick="{{ goPay }}">
+                  <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                  {{ t.payThis }}
+                </button>
+                <button class="btn btn-secondary" style="flex:1;min-height:50px" onClick="{{ goPay }}">{{ t.payAll }} {{ totalDueFmt }}</button>
+              </div>
+              <sc-if value="{{ autopayOn }}">
+                <div style="display:flex;align-items:center;gap:8px;margin-top:12px;font-size:12px;color:var(--color-accent-700)">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12a8 8 0 1 1-3-6.2M20 4v5h-5"></path></svg>
+                  <span>{{ autopayNote }}</span>
+                </div>
+              </sc-if>
+            </div>
+
+            <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">{{ t.allConnections }}</div>
+            <div style="display:flex;flex-direction:column;gap:1px;background:var(--color-accent-200);margin-bottom:20px">
+              <sc-for list="{{ connections }}" as="c" hint-placeholder-count="3">
+                <button style="display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 12px;background:{{ c.cardBg }};border:0;cursor:pointer;font-family:var(--font-body);text-align:left" onClick="{{ c.pick }}">
+                  <span style="font-family:var(--font-heading);font-weight:600;font-size:24px;color:var(--color-accent-800);width:56px;flex:none">{{ c.speed }}</span>
+                  <span style="flex:1;min-width:0">
+                    <span style="display:block;font-family:var(--font-heading);font-weight:600;font-size:15px">{{ c.label }}</span>
+                    <span style="display:block;font-size:11.5px;color:var(--color-neutral-600)">{{ c.id }} · {{ c.plan }}</span>
+                  </span>
+                  <span style="text-align:right">
+                    <span style="display:block;font-family:var(--font-heading);font-weight:600;font-size:15px">{{ c.dueFmt }}</span>
+                    <span style="display:block;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:{{ c.statusInk }}">{{ c.statusLabel }}</span>
+                  </span>
+                </button>
+              </sc-for>
+            </div>
+
+            <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">{{ t.manage }} {{ conn.label }}</div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--color-accent-200);border-left:1px solid var(--color-accent-200)">
+              <sc-for list="{{ tiles }}" as="tile" hint-placeholder-count="12">
+                <button class="tl-tile" onClick="{{ tile.go }}">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.5"><path d="{{ tile.path }}"></path></svg>
+                  <span style="font-family:var(--font-heading);font-weight:600;font-size:12px;line-height:1.15">{{ tile.label }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+
+          <sc-if value="{{ showBanners }}" hint-placeholder-val="{{ true }}">
+            <div style="padding:0 16px 22px">
+              <div style="background:var(--color-accent-800);color:#f2f2f3;padding:14px;display:flex;align-items:center;gap:12px">
+                <div style="flex:1">
+                  <div style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-300)">{{ t.offer }}</div>
+                  <div style="font-family:var(--font-heading);font-weight:600;font-size:17px;line-height:1.2">{{ t.referBanner }}</div>
+                </div>
+                <button class="btn" style="min-height:44px;background:#f2f2f3;color:var(--color-accent-900);border-color:#f2f2f3" onClick="{{ goReferral }}">{{ t.view }}</button>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isBill }}">
+        <div style="padding:16px">
+          <div style="background:var(--color-accent-900);color:#f2f2f3;padding:16px;margin-bottom:20px">
+            <div style="display:flex;align-items:baseline;justify-content:space-between">
+              <div>
+                <div style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-300)">{{ t.amountDue }}</div>
+                <div style="font-family:var(--font-heading);font-weight:600;font-size:42px;line-height:1">{{ conn.dueFmt }}</div>
+              </div>
+              <span class="tag" style="background:{{ conn.tagBg }};color:{{ conn.tagFg }};font-size:10.5px;text-transform:uppercase">{{ conn.statusLabel }}</span>
+            </div>
+            <div style="font-size:12.5px;color:var(--color-accent-300);margin:10px 0 14px">{{ t.cycle }} · {{ conn.plan }}</div>
+            <button class="btn btn-block blueprint" style="min-height:50px;font-size:15px;background:#f2f2f3;color:var(--color-accent-900);border-color:#f2f2f3" onClick="{{ goPay }}">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              {{ t.payNow }}
+            </button>
+          </div>
+          <button class="blueprint" style="display:flex;align-items:center;gap:12px;width:100%;padding:12px 14px;margin-bottom:20px;cursor:pointer;background:var(--color-accent-100);border-color:var(--color-accent-200);font-family:var(--font-body);text-align:left" onClick="{{ goAutopay }}">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.5"><path d="M20 12a8 8 0 1 1-3-6.2M20 4v5h-5"></path></svg>
+            <span style="flex:1">
+              <span style="display:block;font-family:var(--font-heading);font-weight:600;font-size:15px;color:var(--color-accent-900)">{{ t.autopay }}</span>
+              <span style="display:block;font-size:12px;color:var(--color-neutral-700)">{{ autopayStatus }}</span>
+            </span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-neutral-500)" stroke-width="1.5"><path d="m9 6 6 6-6 6"></path></svg>
+          </button>
+          <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:6px">{{ t.paymentHistory }}</div>
+          <table class="table">
+            <thead><tr><th>{{ t.date }}</th><th>{{ t.channel }}</th><th style="text-align:right">{{ t.amount }}</th><th></th></tr></thead>
+            <tbody>
+              <sc-for list="{{ history }}" as="row" hint-placeholder-count="5">
+                <tr>
+                  <td style="font-size:13px">{{ row.date }}</td>
+                  <td style="font-size:13px;color:var(--color-neutral-700)">{{ row.channel }}</td>
+                  <td style="font-size:13px;text-align:right">{{ row.amount }}</td>
+                  <td style="text-align:right"><a href="#" style="font-size:12px">PDF</a></td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isPay }}">
+        <div style="padding:16px">
+          <div style="background:var(--color-accent-100);border:1px solid var(--color-accent-200);padding:14px;margin-bottom:18px">
+            <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">{{ t.paying }}</div>
+            <div style="font-family:var(--font-heading);font-weight:600;font-size:36px;line-height:1.05;color:var(--color-accent-900)">{{ conn.dueFmt }}</div>
+            <div style="font-size:12.5px;color:var(--color-neutral-700)">{{ conn.label }} · {{ conn.id }} · {{ conn.plan }}</div>
+          </div>
+          <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">{{ t.wallet }}</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:18px">
+            <sc-for list="{{ wallets }}" as="m" hint-placeholder-count="5">
+              <button class="blueprint" style="display:flex;align-items:center;gap:12px;min-height:54px;padding:0 14px;cursor:pointer;background:{{ m.bg }};border-color:{{ m.border }};font-family:var(--font-body);text-align:left" onClick="{{ m.pick }}">
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                <span style="width:14px;height:14px;border:1.5px solid var(--color-accent);background:{{ m.dot }};flex:none"></span>
+                <span style="flex:1;font-family:var(--font-heading);font-weight:600;font-size:16px">{{ m.name }}</span>
+                <span style="width:44px;height:26px;border:1px solid var(--color-accent-200);background:var(--color-accent-100);flex:none"></span>
+              </button>
+            </sc-for>
+          </div>
+          <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">{{ t.card }}</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:22px">
+            <sc-for list="{{ cards }}" as="m" hint-placeholder-count="3">
+              <button class="blueprint" style="display:flex;align-items:center;gap:12px;min-height:54px;padding:0 14px;cursor:pointer;background:{{ m.bg }};border-color:{{ m.border }};font-family:var(--font-body);text-align:left" onClick="{{ m.pick }}">
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                <span style="width:14px;height:14px;border:1.5px solid var(--color-accent);background:{{ m.dot }};flex:none"></span>
+                <span style="flex:1;font-family:var(--font-heading);font-weight:600;font-size:16px">{{ m.name }}</span>
+                <span style="width:44px;height:26px;border:1px solid var(--color-accent-200);background:var(--color-accent-100);flex:none"></span>
+              </button>
+            </sc-for>
+          </div>
+          <button class="btn btn-primary btn-block blueprint" style="min-height:54px;font-size:15px" disabled="{{ payDisabled }}" onClick="{{ confirmPay }}">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            {{ payLabel }}
+          </button>
+          <p style="font-size:11.5px;color:var(--color-neutral-600);margin-top:10px">{{ t.payNote }}</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isPaid }}">
+        <div style="padding:0 0 24px">
+          <div style="background:var(--color-accent-900);color:#f2f2f3;padding:28px 16px;text-align:center">
+            <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-300)" stroke-width="1.5" style="margin:0 auto 10px"><path d="M4 12.5 9.5 18 20 6"></path></svg>
+            <div style="font-family:var(--font-heading);font-weight:600;font-size:28px;line-height:1.1">{{ t.paymentReceived }}</div>
+            <div style="font-size:13px;color:var(--color-accent-300);margin-top:4px">{{ t.runsTo }}</div>
+          </div>
+          <div style="padding:18px 16px 0">
+            <table class="table" style="margin-bottom:20px">
+              <tbody>
+                <sc-for list="{{ receipt }}" as="r" hint-placeholder-count="5">
+                  <tr><td style="font-size:12.5px;color:var(--color-neutral-600)">{{ r.k }}</td><td style="font-size:13px;text-align:right">{{ r.v }}</td></tr>
+                </sc-for>
+              </tbody>
+            </table>
+            <button class="btn btn-secondary btn-block" style="min-height:48px;margin-bottom:8px">{{ t.downloadReceipt }}</button>
+            <button class="btn btn-primary btn-block blueprint" style="min-height:48px" onClick="{{ goHome }}">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              {{ t.done }}
+            </button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isAutopay }}">
+        <div style="padding:16px">
+          <sc-if value="{{ autopaySaved }}">
+            <div class="blueprint" style="padding:22px 16px;text-align:center;border-color:var(--color-accent-300)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" style="margin:0 auto 10px"><path d="M4 12.5 9.5 18 20 6"></path></svg>
+              <div style="font-family:var(--font-heading);font-weight:600;font-size:24px">{{ t.autopaySavedTitle }}</div>
+              <p style="font-size:13px;color:var(--color-neutral-700);margin:6px 0 16px">{{ autopayNote }}</p>
+              <button class="btn btn-primary blueprint" style="min-height:48px" onClick="{{ goBill }}">
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                {{ t.backToBill }}
+              </button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ autopayForm }}" hint-placeholder-val="{{ true }}">
+            <div>
+              <div class="blueprint" style="padding:14px;border-color:var(--color-accent-300);display:flex;align-items:center;gap:12px;margin-bottom:20px">
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                <div style="flex:1">
+                  <div style="font-family:var(--font-heading);font-weight:600;font-size:18px">{{ t.autopay }}</div>
+                  <div style="font-size:12.5px;color:var(--color-neutral-700)">{{ t.autopayBlurb }}</div>
+                </div>
+                <button class="tl-sw" style="border-color:{{ apSw.border }};background:{{ apSw.track }}" onClick="{{ toggleAutopay }}" aria-label="Autopay">
+                  <span style="left:{{ apSw.knob }};background:{{ apSw.knobBg }}"></span>
+                </button>
+              </div>
+              <sc-if value="{{ autopayDraft }}">
+                <div>
+                  <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">{{ t.chargeFrom }}</div>
+                  <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+                    <sc-for list="{{ apSources }}" as="m" hint-placeholder-count="3">
+                      <button class="blueprint tl-opt" style="background:{{ m.bg }};border-color:{{ m.border }}" onClick="{{ m.pick }}">
+                        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                        <span style="width:12px;height:12px;border:1.5px solid var(--color-accent);background:{{ m.dot }};flex:none"></span>
+                        <span style="flex:1;font-family:var(--font-heading);font-weight:600;font-size:15px">{{ m.name }}</span>
+                        <span style="font-size:12px;color:var(--color-neutral-600)">{{ m.meta }}</span>
+                      </button>
+                    </sc-for>
+                  </div>
+                  <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">{{ t.chargeWhen }}</div>
+                  <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+                    <sc-for list="{{ apDays }}" as="m" hint-placeholder-count="3">
+                      <button class="blueprint tl-opt" style="background:{{ m.bg }};border-color:{{ m.border }}" onClick="{{ m.pick }}">
+                        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                        <span style="width:12px;height:12px;border:1.5px solid var(--color-accent);background:{{ m.dot }};flex:none"></span>
+                        <span style="flex:1">{{ m.name }}</span>
+                      </button>
+                    </sc-for>
+                  </div>
+                  <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">{{ t.whichLines }}</div>
+                  <div style="display:flex;flex-direction:column;gap:1px;background:var(--color-accent-200);margin-bottom:20px">
+                    <sc-for list="{{ apLines }}" as="l" hint-placeholder-count="3">
+                      <div style="display:flex;align-items:center;gap:12px;background:var(--color-bg);padding:11px 12px">
+                        <span style="flex:1">
+                          <span style="display:block;font-family:var(--font-heading);font-weight:600;font-size:15px">{{ l.label }}</span>
+                          <span style="display:block;font-size:11.5px;color:var(--color-neutral-600)">{{ l.dueFmt }} · {{ l.dueDate }}</span>
+                        </span>
+                        <button class="tl-sw" style="border-color:{{ l.sw.border }};background:{{ l.sw.track }}" onClick="{{ l.toggle }}" aria-label="Line autopay">
+                          <span style="left:{{ l.sw.knob }};background:{{ l.sw.knobBg }}"></span>
+                        </button>
+                      </div>
+                    </sc-for>
+                  </div>
+                  <button class="btn btn-primary btn-block blueprint" style="min-height:52px;font-size:15px" onClick="{{ saveAutopay }}">
+                    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                    {{ t.saveAutopay }}
+                  </button>
+                </div>
+              </sc-if>
+              <sc-if value="{{ autopayEmpty }}">
+                <div style="text-align:center;padding:26px 10px">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-neutral-400)" stroke-width="1.5" style="margin:0 auto 12px"><path d="M20 12a8 8 0 1 1-3-6.2M20 4v5h-5"></path></svg>
+                  <div style="font-family:var(--font-heading);font-weight:600;font-size:18px;color:var(--color-neutral-700)">{{ t.autopayOffTitle }}</div>
+                  <p style="font-size:13px;color:var(--color-neutral-600);margin-top:6px">{{ t.autopayOffBody }}</p>
+                </div>
+              </sc-if>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isPackages }}">
+        <div style="padding:16px">
+          <div class="seg" style="display:flex;width:100%;margin-bottom:18px;border-color:var(--color-accent-300)">
+            <button class="tl-seg" style="background:{{ pkgSeg.allBg }};color:{{ pkgSeg.allFg }}" onClick="{{ pkgAll }}">{{ t.allPlans }}</button>
+            <button class="tl-seg" style="border-left:1px solid var(--color-accent-300);background:{{ pkgSeg.activeBg }};color:{{ pkgSeg.activeFg }}" onClick="{{ pkgActive }}">{{ t.current }}</button>
+          </div>
+
+          <sc-if value="{{ pkgShowAll }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <sc-for list="{{ packages }}" as="p" hint-placeholder-count="4">
+                <div class="blueprint" style="padding:14px;border-color:{{ p.frame }};background:{{ p.cardBg }}">
+                  <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                  <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px">
+                    <div style="font-family:var(--font-heading);font-weight:600;font-size:20px">{{ p.name }}</div>
+                    <div style="font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-700)">{{ p.tag }}</div>
+                  </div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--color-accent-200);margin-bottom:12px">
+                    <div style="background:var(--color-bg);padding:9px 11px">
+                      <div style="font-family:var(--font-heading);font-weight:600;font-size:30px;line-height:1;color:var(--color-accent-800)">{{ p.speed }}</div>
+                      <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-600)">Mbps</div>
+                    </div>
+                    <div style="background:var(--color-bg);padding:9px 11px">
+                      <div style="font-family:var(--font-heading);font-weight:600;font-size:30px;line-height:1;color:var(--color-accent-800)">{{ p.price }}</div>
+                      <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-600)">{{ t.perMonth }}</div>
+                    </div>
+                  </div>
+                  <div style="display:flex;gap:8px">
+                    <button class="btn btn-secondary" style="flex:1;min-height:46px">{{ t.details }}</button>
+                    <button class="btn blueprint" style="flex:1;min-height:46px;background:{{ p.ctaBg }};color:{{ p.ctaFg }};border-color:{{ p.ctaBorder }}" disabled="{{ p.isCurrent }}" onClick="{{ p.switchTo }}">
+                      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                      {{ p.ctaLabel }}
+                    </button>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ pkgShowActive }}">
+            <div class="blueprint" style="padding:18px 16px;border-color:var(--color-accent-300)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">{{ t.currentPlan }}</div>
+              <div style="font-family:var(--font-heading);font-weight:600;font-size:32px;margin:2px 0 14px;color:var(--color-accent-900)">{{ conn.plan }}</div>
+              <table class="table">
+                <tbody>
+                  <sc-for list="{{ planSpec }}" as="sp" hint-placeholder-count="6">
+                    <tr><td style="font-size:12.5px;color:var(--color-neutral-600)">{{ sp.k }}</td><td style="font-size:13px;text-align:right">{{ sp.v }}</td></tr>
+                  </sc-for>
+                </tbody>
+              </table>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isPlanChange }}">
+        <div style="padding:16px">
+          <div style="background:var(--color-accent-900);color:#f2f2f3;padding:16px;margin-bottom:18px">
+            <div style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-300)">{{ t.switchingTo }}</div>
+            <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:10px">
+              <div style="font-family:var(--font-heading);font-weight:600;font-size:28px;line-height:1.1">{{ targetPlan.name }}</div>
+              <div style="text-align:right">
+                <div style="font-family:var(--font-heading);font-weight:600;font-size:28px;line-height:1">{{ targetPlan.speed }}</div>
+                <div style="font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-accent-300)">Mbps</div>
+              </div>
+            </div>
+            <div style="font-size:12.5px;color:var(--color-accent-300);margin-top:6px">{{ t.from }} {{ conn.plan }} · {{ conn.speed }} Mbps</div>
+          </div>
+          <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:6px">{{ t.proRata }}</div>
+          <table class="table" style="margin-bottom:8px">
+            <tbody>
+              <sc-for list="{{ proRata }}" as="r" hint-placeholder-count="5">
+                <tr>
+                  <td style="font-size:12.5px;color:{{ r.ink }}">{{ r.k }}</td>
+                  <td style="font-size:13px;text-align:right;font-family:{{ r.font }};color:{{ r.ink }}">{{ r.v }}</td>
+                </tr>
+              </sc-for>
+            </tbody>
+          </table>
+          <p style="font-size:12px;color:var(--color-neutral-600);margin:0 0 18px">{{ t.proRataNote }}</p>
+          <button class="btn btn-primary btn-block blueprint" style="min-height:52px;font-size:15px" onClick="{{ confirmPlan }}">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            {{ t.confirmSwitch }}
+          </button>
+          <button class="btn btn-ghost btn-block" style="min-height:48px;margin-top:8px" onClick="{{ goPackages }}">{{ t.cancel }}</button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isPlanChanged }}">
+        <div style="padding:0 0 24px">
+          <div style="background:var(--color-accent-900);color:#f2f2f3;padding:28px 16px;text-align:center">
+            <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-300)" stroke-width="1.5" style="margin:0 auto 10px"><path d="M4 12.5 9.5 18 20 6"></path></svg>
+            <div style="font-family:var(--font-heading);font-weight:600;font-size:26px;line-height:1.1">{{ t.planQueued }}</div>
+            <div style="font-size:13px;color:var(--color-accent-300);margin-top:6px">{{ planQueuedNote }}</div>
+          </div>
+          <div style="padding:18px 16px 0">
+            <button class="btn btn-primary btn-block blueprint" style="min-height:50px" onClick="{{ goHome }}">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              {{ t.done }}
+            </button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isUsage }}">
+        <div style="padding:16px">
+          <div class="seg" style="display:flex;width:100%;margin-bottom:18px;border-color:var(--color-accent-300)">
+            <sc-for list="{{ ranges }}" as="r" hint-placeholder-count="3">
+              <button class="tl-seg" style="border-left:1px solid var(--color-accent-300);background:{{ r.bg }};color:{{ r.fg }}" onClick="{{ r.pick }}">{{ r.label }}</button>
+            </sc-for>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-accent-200);margin-bottom:20px">
+            <sc-for list="{{ totals }}" as="t2" hint-placeholder-count="3">
+              <div style="background:var(--color-accent-100);padding:11px">
+                <div style="font-family:var(--font-heading);font-weight:600;font-size:27px;line-height:1;color:var(--color-accent-900)">{{ t2.v }}</div>
+                <div style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-700)">{{ t2.k }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div class="blueprint" style="padding:14px 12px 10px;margin-bottom:16px;border-color:var(--color-accent-300)">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <div style="display:flex;align-items:flex-end;gap:6px;height:158px;border-bottom:1px solid var(--color-accent-300)">
+              <sc-for list="{{ bars }}" as="b" hint-placeholder-count="7">
+                <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;height:100%">
+                  <div style="background:var(--color-accent-800);height:{{ b.dlH }}"></div>
+                  <div style="background:var(--color-accent-400);height:{{ b.ulH }}"></div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:6px;margin-top:6px">
+              <sc-for list="{{ bars }}" as="b" hint-placeholder-count="7">
+                <div style="flex:1;text-align:center;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--color-neutral-600)">{{ b.label }}</div>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:16px;margin-top:12px;font-size:11.5px;color:var(--color-neutral-700)">
+              <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;background:var(--color-accent-800)"></span>{{ t.download }}</span>
+              <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;background:var(--color-accent-400)"></span>{{ t.upload }}</span>
+            </div>
+          </div>
+          <p style="font-size:12.5px;color:var(--color-neutral-700);margin:0">{{ t.unmeteredNote }}</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isSpeedTest }}">
+        <div style="padding:16px">
+          <div class="blueprint" style="padding:20px 16px;border-color:var(--color-accent-300);text-align:center;margin-bottom:18px">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <div style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-700)">{{ stPhaseLabel }}</div>
+            <div style="display:flex;align-items:flex-end;justify-content:center;gap:8px;margin:6px 0 4px">
+              <span style="font-family:var(--font-heading);font-weight:600;font-size:74px;line-height:.86;letter-spacing:-.02em;color:var(--color-accent-800)">{{ stBig }}</span>
+              <span style="font-family:var(--font-heading);font-weight:600;font-size:18px;padding-bottom:10px;color:var(--color-neutral-700)">Mbps</span>
+            </div>
+            <div style="height:6px;background:var(--color-accent-200);margin:14px 0 0">
+              <div style="height:6px;background:var(--color-accent);width:{{ stProgress }}"></div>
+            </div>
+            <div style="font-size:11.5px;color:var(--color-neutral-600);margin-top:8px">{{ stServer }}</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--color-accent-200);margin-bottom:18px">
+            <sc-for list="{{ stMetrics }}" as="m" hint-placeholder-count="3">
+              <div style="background:var(--color-accent-100);padding:11px">
+                <div style="font-family:var(--font-heading);font-weight:600;font-size:24px;line-height:1;color:var(--color-accent-900)">{{ m.v }}</div>
+                <div style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-700)">{{ m.k }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <sc-if value="{{ stDone }}">
+            <div style="background:var(--color-accent-100);border-left:3px solid var(--color-accent);padding:11px 13px;margin-bottom:16px">
+              <div style="font-size:13px;color:var(--color-accent-900)">{{ stVerdict }}</div>
+            </div>
+          </sc-if>
+          <button class="btn btn-primary btn-block blueprint" style="min-height:54px;font-size:15px" disabled="{{ stRunning }}" onClick="{{ runSpeedTest }}">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            {{ stButton }}
+          </button>
+          <p style="font-size:11.5px;color:var(--color-neutral-600);margin-top:10px">{{ t.speedNote }}</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isWifi }}">
+        <div style="padding:16px">
+          <div class="blueprint" style="padding:14px;border-color:var(--color-accent-300);margin-bottom:18px">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+              <div>
+                <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">{{ t.network }}</div>
+                <div style="font-family:var(--font-heading);font-weight:600;font-size:22px;color:var(--color-accent-900)">{{ ssid }}</div>
+              </div>
+              <span class="tag tag-outline" style="font-size:10px;text-transform:uppercase">{{ routerModel }}</span>
+            </div>
+            <div class="field" style="margin-bottom:12px">
+              <label for="wf-ssid">{{ t.ssid }}</label>
+              <input class="input tl-in" id="wf-ssid" value="{{ ssid }}" onChange="{{ setSsid }}">
+            </div>
+            <div class="field" style="margin-bottom:12px">
+              <label for="wf-pw">{{ t.wifiPassword }}</label>
+              <div style="display:flex;gap:8px">
+                <input class="input tl-in" id="wf-pw" style="flex:1" type="{{ pwType }}" value="{{ wifiPw }}" onChange="{{ setWifiPw }}">
+                <button class="btn btn-secondary" style="min-height:44px" onClick="{{ togglePw }}">{{ pwToggleLabel }}</button>
+              </div>
+            </div>
+            <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:6px">{{ t.band }}</div>
+            <div class="seg" style="display:flex;width:100%;margin-bottom:14px;border-color:var(--color-accent-300)">
+              <sc-for list="{{ bands }}" as="b" hint-placeholder-count="3">
+                <button class="tl-seg" style="border-left:1px solid var(--color-accent-300);background:{{ b.bg }};color:{{ b.fg }}" onClick="{{ b.pick }}">{{ b.label }}</button>
+              </sc-for>
+            </div>
+            <button class="btn btn-primary btn-block blueprint" style="min-height:50px" disabled="{{ wifiClean }}" onClick="{{ saveWifi }}">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              {{ wifiSaveLabel }}
+            </button>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:1px;background:var(--color-accent-200);margin-bottom:18px">
+            <div style="display:flex;align-items:center;gap:12px;background:var(--color-bg);padding:12px">
+              <div style="flex:1">
+                <div style="font-family:var(--font-heading);font-weight:600;font-size:15px">{{ t.guestNetwork }}</div>
+                <div style="font-size:12px;color:var(--color-neutral-600)">{{ guestNote }}</div>
+              </div>
+              <button class="tl-sw" style="border-color:{{ guestSw.border }};background:{{ guestSw.track }}" onClick="{{ toggleGuest }}" aria-label="Guest network">
+                <span style="left:{{ guestSw.knob }};background:{{ guestSw.knobBg }}"></span>
+              </button>
+            </div>
+            <button style="display:flex;align-items:center;gap:12px;background:var(--color-bg);padding:12px;border:0;cursor:pointer;font-family:var(--font-body);text-align:left;width:100%" onClick="{{ askRestart }}">
+              <div style="flex:1">
+                <div style="font-family:var(--font-heading);font-weight:600;font-size:15px">{{ t.restartRouter }}</div>
+                <div style="font-size:12px;color:var(--color-neutral-600)">{{ t.restartNote }}</div>
+              </div>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.5"><path d="M20 12a8 8 0 1 1-3-6.2M20 4v5h-5"></path></svg>
+            </button>
+          </div>
+
+          <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px">
+            <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600)">{{ t.devices }}</div>
+            <div style="font-size:11.5px;color:var(--color-neutral-600)">{{ deviceCountLabel }}</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1px;background:var(--color-accent-200)">
+            <sc-for list="{{ devices }}" as="d" hint-placeholder-count="5">
+              <div style="display:flex;align-items:center;gap:12px;background:var(--color-bg);padding:11px 12px;opacity:{{ d.opacity }}">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.5" style="flex:none"><path d="{{ d.path }}"></path></svg>
+                <span style="flex:1;min-width:0">
+                  <span style="display:block;font-family:var(--font-heading);font-weight:600;font-size:15px">{{ d.name }}</span>
+                  <span style="display:block;font-size:11.5px;color:var(--color-neutral-600)">{{ d.meta }}</span>
+                </span>
+                <button class="btn btn-ghost" style="min-height:44px;font-size:12px;color:{{ d.actionInk }}" onClick="{{ d.toggle }}">{{ d.action }}</button>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isSupport }}">
+        <div style="padding:16px">
+          <div class="blueprint" style="padding:14px;background:var(--color-accent-100);border-color:var(--color-accent-200);margin-bottom:20px;display:flex;align-items:center;gap:12px">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <div style="flex:1">
+              <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">{{ t.lineCheck }}</div>
+              <div style="font-family:var(--font-heading);font-weight:600;font-size:19px;color:var(--color-accent-900)">{{ lineCheckTitle }}</div>
+              <div style="font-size:12px;color:var(--color-neutral-700)">{{ t.lastChecked }}</div>
+            </div>
+            <button class="btn btn-secondary" style="min-height:46px">{{ t.rerun }}</button>
+          </div>
+
+          <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:4px">{{ t.reachUs }}</div>
+          <div style="border-top:1px solid var(--color-divider);margin-bottom:20px">
+            <sc-for list="{{ contacts }}" as="c" hint-placeholder-count="4">
+              <button class="tl-row">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-700)" stroke-width="1.5"><path d="{{ c.path }}"></path></svg>
+                <span style="flex:1">
+                  <span style="display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-600)">{{ c.k }}</span>
+                  <span style="display:block;font-family:var(--font-heading);font-weight:600;font-size:16px">{{ c.v }}</span>
+                </span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-neutral-500)" stroke-width="1.5"><path d="m9 6 6 6-6 6"></path></svg>
+              </button>
+            </sc-for>
+          </div>
+
+          <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">{{ t.yourTickets }}</div>
+          <sc-if value="{{ hasTickets }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px">
+              <sc-for list="{{ tickets }}" as="t3" hint-placeholder-count="2">
+                <button class="blueprint" style="padding:12px;border-color:var(--color-accent-200);background:transparent;cursor:pointer;font-family:var(--font-body);text-align:left;width:100%" onClick="{{ t3.open }}">
+                  <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                    <div style="font-family:var(--font-heading);font-weight:600;font-size:15px">{{ t3.title }}</div>
+                    <span class="tag" style="background:{{ t3.bg }};color:{{ t3.fg }};font-size:10px;text-transform:uppercase">{{ t3.status }}</span>
+                  </div>
+                  <div style="font-size:12px;color:var(--color-neutral-600);margin-top:4px">#{{ t3.id }} · {{ t3.date }} · {{ t3.replies }}</div>
+                </button>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ noTickets }}">
+            <div style="text-align:center;padding:24px 10px 26px">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-neutral-400)" stroke-width="1.5" style="margin:0 auto 12px"><path d="M4 5h16v10H9l-5 4z"></path></svg>
+              <div style="font-family:var(--font-heading);font-weight:600;font-size:18px;color:var(--color-neutral-700)">{{ t.noTicketsTitle }}</div>
+              <p style="font-size:13px;color:var(--color-neutral-600);margin-top:6px">{{ t.noTicketsBody }}</p>
+            </div>
+          </sc-if>
+          <button class="btn btn-primary btn-block blueprint" style="min-height:52px;font-size:15px" onClick="{{ goTicket }}">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            {{ t.openTicket }}
+          </button>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isTicket }}">
+        <div style="padding:16px">
+          <sc-if value="{{ ticketDone }}">
+            <div class="blueprint" style="padding:22px 16px;text-align:center;border-color:var(--color-accent-300)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" style="margin:0 auto 10px"><path d="M4 12.5 9.5 18 20 6"></path></svg>
+              <div style="font-family:var(--font-heading);font-weight:600;font-size:25px">{{ t.ticketOpen }}</div>
+              <p style="font-size:13px;color:var(--color-neutral-700);margin:6px 0 16px">{{ t.ticketOpenBody }}</p>
+              <button class="btn btn-primary blueprint" style="min-height:48px" onClick="{{ goThread }}">
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                {{ t.viewThread }}
+              </button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ ticketForm }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div class="field">
+                <label for="tkt-line">{{ t.connection }}</label>
+                <div style="font-family:var(--font-heading);font-weight:600;font-size:17px;padding:6px 0">{{ conn.label }} · {{ conn.id }}</div>
+              </div>
+              <div class="field">
+                <label for="tkt-note">{{ t.problem }}</label>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                  <sc-for list="{{ issues }}" as="i" hint-placeholder-count="4">
+                    <button class="blueprint tl-opt" style="background:{{ i.bg }};border-color:{{ i.border }}" onClick="{{ i.pick }}">
+                      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                      <span style="width:12px;height:12px;border:1.5px solid var(--color-accent);background:{{ i.dot }};flex:none"></span>
+                      {{ i.label }}
+                    </button>
+                  </sc-for>
+                </div>
+              </div>
+              <div class="field">
+                <label for="tkt-note">{{ t.whatHappening }}</label>
+                <textarea class="input tl-in" id="tkt-note" placeholder="{{ t.ticketPlaceholder }}"></textarea>
+              </div>
+              <div class="field">
+                <label for="tkt-when">{{ t.bestTime }}</label>
+                <input class="input tl-in" id="tkt-when" value="{{ t.bestTimeVal }}">
+              </div>
+              <button class="btn btn-primary btn-block blueprint" style="min-height:52px;font-size:15px" disabled="{{ ticketDisabled }}" onClick="{{ submitTicket }}">
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                {{ t.submitTicket }}
+              </button>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isThread }}">
+        <div style="display:flex;flex-direction:column;min-height:100%">
+          <div style="background:var(--color-accent-100);border-bottom:1px solid var(--color-accent-200);padding:12px 16px;display:flex;align-items:center;gap:10px">
+            <div style="flex:1">
+              <div style="font-family:var(--font-heading);font-weight:600;font-size:17px;color:var(--color-accent-900)">{{ thread.title }}</div>
+              <div style="font-size:11.5px;color:var(--color-neutral-700)">#{{ thread.id }} · {{ conn.label }} · {{ thread.eta }}</div>
+            </div>
+            <span class="tag" style="background:var(--color-accent-200);color:var(--color-accent-900);font-size:10px;text-transform:uppercase">{{ thread.status }}</span>
+          </div>
+          <div style="flex:1;padding:16px;display:flex;flex-direction:column;gap:12px">
+            <sc-for list="{{ messages }}" as="m" hint-placeholder-count="4">
+              <div style="align-self:{{ m.align }};max-width:82%">
+                <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:3px;text-align:{{ m.textAlign }}">{{ m.who }} · {{ m.time }}</div>
+                <div style="background:{{ m.bg }};color:{{ m.fg }};border:1px solid {{ m.border }};padding:9px 11px;font-size:13.5px;line-height:1.5">{{ m.body }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="border-top:1px solid var(--color-divider);padding:10px 12px;display:flex;gap:8px;align-items:center;background:var(--color-bg)">
+            <input class="input tl-in" style="flex:1" placeholder="{{ t.reply }}" value="{{ draft }}" onChange="{{ setDraft }}">
+            <button class="btn btn-primary blueprint" style="min-height:46px;min-width:56px" disabled="{{ sendDisabled }}" onClick="{{ sendMessage }}">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M13 5l7 7-7 7"></path></svg>
+            </button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isRewards }}">
+        <div>
+          <div style="background:var(--color-accent-900);color:#f2f2f3;padding:20px 16px">
+            <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-accent-300)">{{ t.pointsBalance }}</div>
+            <div style="display:flex;align-items:flex-end;gap:10px">
+              <span style="font-family:var(--font-heading);font-weight:600;font-size:56px;line-height:.9">{{ pointsFmt }}</span>
+              <span style="font-size:13px;padding-bottom:8px;color:var(--color-accent-300)">= {{ pointsValue }}</span>
+            </div>
+            <div style="font-size:12px;color:var(--color-accent-300);margin-top:6px">{{ t.pointsRate }}</div>
+          </div>
+          <div style="padding:16px">
+            <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">{{ t.redeem }}</div>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px">
+              <sc-for list="{{ redeemOptions }}" as="r" hint-placeholder-count="4">
+                <button class="blueprint" style="display:flex;align-items:center;gap:12px;min-height:60px;padding:0 14px;cursor:pointer;background:{{ r.bg }};border-color:{{ r.border }};font-family:var(--font-body);text-align:left" disabled="{{ r.disabled }}" onClick="{{ r.pick }}">
+                  <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                  <span style="width:12px;height:12px;border:1.5px solid var(--color-accent);background:{{ r.dot }};flex:none"></span>
+                  <span style="flex:1">
+                    <span style="display:block;font-family:var(--font-heading);font-weight:600;font-size:16px">{{ r.title }}</span>
+                    <span style="display:block;font-size:11.5px;color:{{ r.metaInk }}">{{ r.meta }}</span>
+                  </span>
+                  <span style="font-family:var(--font-heading);font-weight:600;font-size:18px;color:var(--color-accent-800)">{{ r.cost }}</span>
+                </button>
+              </sc-for>
+            </div>
+            <button class="btn btn-primary btn-block blueprint" style="min-height:52px;font-size:15px" disabled="{{ redeemDisabled }}" onClick="{{ doRedeem }}">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              {{ redeemLabel }}
+            </button>
+            <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin:22px 0 6px">{{ t.ledger }}</div>
+            <table class="table">
+              <tbody>
+                <sc-for list="{{ ledger }}" as="l" hint-placeholder-count="4">
+                  <tr>
+                    <td style="font-size:12.5px">
+                      {{ l.k }}
+                      <span style="display:block;font-size:11px;color:var(--color-neutral-600)">{{ l.date }}</span>
+                    </td>
+                    <td style="font-size:14px;text-align:right;font-family:var(--font-heading);font-weight:600;color:{{ l.ink }}">{{ l.v }}</td>
+                  </tr>
+                </sc-for>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isReferral }}">
+        <div style="padding:16px">
+          <div class="blueprint" style="padding:16px;border-color:var(--color-accent-300);margin-bottom:18px">
+            <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+            <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">{{ t.yourCode }}</div>
+            <div style="font-family:var(--font-heading);font-weight:600;font-size:38px;line-height:1;letter-spacing:.04em;color:var(--color-accent-900);margin:4px 0 12px">{{ referralCode }}</div>
+            <div style="font-size:13px;color:var(--color-neutral-700);margin-bottom:14px">{{ t.referralBlurb }}</div>
+            <div style="display:flex;gap:8px">
+              <button class="btn btn-primary blueprint" style="flex:1;min-height:48px" onClick="{{ copyCode }}">
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                {{ copyLabel }}
+              </button>
+              <button class="btn btn-secondary" style="flex:1;min-height:48px">{{ t.share }}</button>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--color-accent-200);margin-bottom:18px">
+            <sc-for list="{{ referralStats }}" as="s2" hint-placeholder-count="2">
+              <div style="background:var(--color-accent-100);padding:11px 12px">
+                <div style="font-family:var(--font-heading);font-weight:600;font-size:26px;line-height:1;color:var(--color-accent-900)">{{ s2.v }}</div>
+                <div style="font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-accent-700)">{{ s2.k }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">{{ t.invites }}</div>
+          <sc-if value="{{ hasInvites }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;gap:1px;background:var(--color-accent-200)">
+              <sc-for list="{{ invites }}" as="i2" hint-placeholder-count="3">
+                <div style="display:flex;align-items:center;gap:12px;background:var(--color-bg);padding:11px 12px">
+                  <span style="flex:1">
+                    <span style="display:block;font-family:var(--font-heading);font-weight:600;font-size:15px">{{ i2.name }}</span>
+                    <span style="display:block;font-size:11.5px;color:var(--color-neutral-600)">{{ i2.date }}</span>
+                  </span>
+                  <span class="tag" style="background:{{ i2.bg }};color:{{ i2.fg }};font-size:10px;text-transform:uppercase">{{ i2.status }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ noInvites }}">
+            <div style="text-align:center;padding:24px 10px">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-neutral-400)" stroke-width="1.5" style="margin:0 auto 12px"><path d="M4 20a7 7 0 0 1 12-4M9 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8M18 14v6M15 17h6"></path></svg>
+              <div style="font-family:var(--font-heading);font-weight:600;font-size:18px;color:var(--color-neutral-700)">{{ t.noInvitesTitle }}</div>
+              <p style="font-size:13px;color:var(--color-neutral-600);margin-top:6px">{{ t.noInvitesBody }}</p>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isRelocate }}">
+        <div style="padding:16px">
+          <sc-if value="{{ relocateDone }}">
+            <div class="blueprint" style="padding:22px 16px;text-align:center;border-color:var(--color-accent-300)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" style="margin:0 auto 10px"><path d="M4 12.5 9.5 18 20 6"></path></svg>
+              <div style="font-family:var(--font-heading);font-weight:600;font-size:24px">{{ t.relocateDoneTitle }}</div>
+              <p style="font-size:13px;color:var(--color-neutral-700);margin:6px 0 16px">{{ t.relocateDoneBody }}</p>
+              <button class="btn btn-primary blueprint" style="min-height:48px" onClick="{{ goHome }}">
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                {{ t.done }}
+              </button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ relocateForm }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div class="field">
+                <label for="rl-from">{{ t.movingLine }}</label>
+                <div style="font-family:var(--font-heading);font-weight:600;font-size:17px;padding:6px 0">{{ conn.label }} · {{ conn.id }}</div>
+                <div style="font-size:12.5px;color:var(--color-neutral-600)">{{ t.currentAddress }}</div>
+              </div>
+              <div class="field">
+                <label for="rl-area">{{ t.newArea }}</label>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                  <sc-for list="{{ areas }}" as="a2" hint-placeholder-count="4">
+                    <button class="blueprint tl-opt" style="background:{{ a2.bg }};border-color:{{ a2.border }}" onClick="{{ a2.pick }}">
+                      <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                      <span style="width:12px;height:12px;border:1.5px solid var(--color-accent);background:{{ a2.dot }};flex:none"></span>
+                      <span style="flex:1">{{ a2.label }}</span>
+                      <span style="font-size:11.5px;color:{{ a2.coverInk }}">{{ a2.cover }}</span>
+                    </button>
+                  </sc-for>
+                </div>
+              </div>
+              <div class="field">
+                <label for="rl-addr">{{ t.newAddress }}</label>
+                <textarea class="input tl-in" id="rl-addr" placeholder="{{ t.addressPlaceholder }}"></textarea>
+              </div>
+              <div class="field">
+                <label for="rl-date">{{ t.moveDate }}</label>
+                <input class="input tl-in" id="rl-date" value="{{ t.moveDateVal }}">
+              </div>
+              <div style="background:var(--color-accent-100);border-left:3px solid var(--color-accent);padding:11px 13px;font-size:12.5px;color:var(--color-accent-900)">{{ t.relocateFee }}</div>
+              <button class="btn btn-primary btn-block blueprint" style="min-height:52px;font-size:15px" disabled="{{ relocateDisabled }}" onClick="{{ submitRelocate }}">
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                {{ t.requestMove }}
+              </button>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isSettings }}">
+        <div style="padding:16px">
+          <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">{{ t.language }}</div>
+          <div class="seg" style="display:flex;width:100%;margin-bottom:22px;border-color:var(--color-accent-300)">
+            <sc-for list="{{ langOptions }}" as="l" hint-placeholder-count="2">
+              <button class="tl-seg" style="border-left:1px solid var(--color-accent-300);background:{{ l.bg }};color:{{ l.fg }}" onClick="{{ l.pick }}">{{ l.label }}</button>
+            </sc-for>
+          </div>
+          <div style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--color-neutral-600);margin-bottom:8px">{{ t.notifications }}</div>
+          <div style="display:flex;flex-direction:column;gap:1px;background:var(--color-accent-200);margin-bottom:22px">
+            <sc-for list="{{ prefs }}" as="pr" hint-placeholder-count="5">
+              <div style="display:flex;align-items:center;gap:12px;background:var(--color-bg);padding:12px">
+                <span style="flex:1">
+                  <span style="display:block;font-family:var(--font-heading);font-weight:600;font-size:15px">{{ pr.label }}</span>
+                  <span style="display:block;font-size:12px;color:var(--color-neutral-600)">{{ pr.note }}</span>
+                </span>
+                <button class="tl-sw" style="border-color:{{ pr.sw.border }};background:{{ pr.sw.track }}" onClick="{{ pr.toggle }}" aria-label="Preference">
+                  <span style="left:{{ pr.sw.knob }};background:{{ pr.sw.knobBg }}"></span>
+                </button>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <button class="btn btn-secondary btn-block" style="min-height:48px" onClick="{{ goAccount }}">{{ t.accountDetails }}</button>
+            <button class="btn btn-secondary btn-block" style="min-height:48px" onClick="{{ goRelocate }}">{{ t.requestMove }}</button>
+            <button class="btn btn-ghost btn-block" style="min-height:48px;color:var(--color-accent-800)" onClick="{{ signOut }}">{{ t.signOut }}</button>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isAccount }}">
+        <div>
+          <div style="background:var(--color-accent-900);color:#f2f2f3;padding:20px 16px">
+            <div style="display:flex;align-items:center;gap:14px">
+              <div class="blueprint duotone" style="width:74px;height:74px;flex:none;background:var(--color-accent-700);display:flex;align-items:center;justify-content:center;border-color:var(--color-accent-300)">
+                <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                <span style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#f2f2f3;text-align:center">Photo<br>1:1</span>
+              </div>
+              <div>
+                <div style="font-family:var(--font-heading);font-weight:600;font-size:26px;line-height:1.1">{{ customerName }}</div>
+                <div style="font-size:12.5px;color:var(--color-accent-300)">ID {{ conn.id }} · {{ connCountLabel }}</div>
+              </div>
+            </div>
+          </div>
+          <div style="padding:18px 16px">
+            <table class="table" style="margin-bottom:18px">
+              <tbody>
+                <sc-for list="{{ accountSpec }}" as="a" hint-placeholder-count="6">
+                  <tr><td style="font-size:12.5px;color:var(--color-neutral-600)">{{ a.k }}</td><td style="font-size:13px;text-align:right">{{ a.v }}</td></tr>
+                </sc-for>
+              </tbody>
+            </table>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <button class="btn btn-secondary btn-block" style="min-height:48px">{{ t.editContact }}</button>
+              <button class="btn btn-secondary btn-block" style="min-height:48px">{{ t.changePassword }}</button>
+              <button class="btn btn-ghost btn-block" style="min-height:48px;color:var(--color-accent-800)" onClick="{{ signOut }}">{{ t.signOut }}</button>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isNotifications }}">
+        <div style="padding:0 0 8px">
+          <sc-if value="{{ hasNotifications }}" hint-placeholder-val="{{ true }}">
+            <div>
+              <sc-for list="{{ notifications }}" as="n" hint-placeholder-count="4">
+                <div style="padding:14px 16px;border-bottom:1px solid var(--color-divider);display:flex;gap:12px;background:{{ n.rowBg }}">
+                  <span style="width:8px;height:8px;margin-top:6px;flex:none;background:{{ n.dot }}"></span>
+                  <div>
+                    <div style="font-family:var(--font-heading);font-weight:600;font-size:15px">{{ n.title }}</div>
+                    <div style="font-size:13px;line-height:1.5;color:var(--color-neutral-700)">{{ n.body }}</div>
+                    <div style="font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--color-neutral-500);margin-top:4px">{{ n.time }}</div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ noNotifications }}">
+            <div style="text-align:center;padding:60px 24px">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--color-neutral-400)" stroke-width="1.5" style="margin:0 auto 14px"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"></path></svg>
+              <div style="font-family:var(--font-heading);font-weight:600;font-size:19px;color:var(--color-neutral-700)">{{ t.noNotifTitle }}</div>
+              <p style="font-size:13px;color:var(--color-neutral-600);margin-top:6px">{{ t.noNotifBody }}</p>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isOffers }}">
+        <div style="padding:16px;display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ offers }}" as="o" hint-placeholder-count="3">
+            <div class="blueprint" style="padding:0;border-color:var(--color-accent-300)">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <div class="duotone" style="height:132px;background:var(--color-accent-700);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--color-accent-300)">
+                <span style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#f2f2f3">Campaign image placeholder</span>
+              </div>
+              <div style="padding:12px 14px">
+                <div style="font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">{{ o.kicker }}</div>
+                <div style="font-family:var(--font-heading);font-weight:600;font-size:20px;line-height:1.15;margin:2px 0 6px">{{ o.title }}</div>
+                <div style="font-size:13px;color:var(--color-neutral-700)">{{ o.body }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+    </div>
+
+    <div style="display:flex;border-top:1px solid var(--color-accent-200);background:var(--color-bg)">
+      <sc-for list="{{ navItems }}" as="nav" hint-placeholder-count="5">
+        <button class="tl-nav" style="color:{{ nav.fg }};background:{{ nav.bg }};border-top:2px solid {{ nav.bar }}" onClick="{{ nav.go }}">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="{{ nav.path }}"></path></svg>
+          {{ nav.label }}
+        </button>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ drawerOpen }}">
+      <div style="position:absolute;inset:0;background:color-mix(in srgb, var(--color-accent-900) 55%, transparent);display:flex">
+        <div style="width:80%;background:var(--color-bg);display:flex;flex-direction:column">
+          <div style="background:var(--color-accent-900);color:#f2f2f3;padding:16px;display:flex;align-items:flex-start;justify-content:space-between">
+            <div>
+              <div style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--color-accent-300)">{{ t.signedIn }}</div>
+              <div style="font-family:var(--font-heading);font-weight:600;font-size:21px">{{ customerName }}</div>
+              <div style="font-size:12px;color:var(--color-accent-300)">ID {{ conn.id }} · {{ connCountLabel }}</div>
+            </div>
+            <button class="btn btn-icon" style="border-color:rgba(242,242,243,.3);color:#f2f2f3;background:transparent" onClick="{{ closeDrawer }}" aria-label="Close">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+            </button>
+          </div>
+          <div style="padding:16px;display:flex;flex-direction:column;flex:1;overflow:auto">
+            <button class="blueprint" style="padding:12px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;background:var(--color-accent-100);border-color:var(--color-accent-200);cursor:pointer;font-family:var(--font-body);text-align:left;width:100%" onClick="{{ goRewards }}">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              <span>
+                <span style="display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent-700)">{{ t.pointsBalance }}</span>
+                <span style="display:block;font-family:var(--font-heading);font-weight:600;font-size:27px;line-height:1;color:var(--color-accent-900)">{{ pointsFmt }}</span>
+              </span>
+              <span class="btn btn-secondary" style="min-height:46px;display:inline-flex;align-items:center">{{ t.redeem }}</span>
+            </button>
+            <div style="border-top:1px solid var(--color-divider)">
+              <sc-for list="{{ drawerLinks }}" as="d" hint-placeholder-count="9">
+                <button class="tl-row" onClick="{{ d.go }}">
+                  <span style="flex:1;font-family:var(--font-heading);font-weight:600;font-size:16px">{{ d.label }}</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-neutral-500)" stroke-width="1.5"><path d="m9 6 6 6-6 6"></path></svg>
+                </button>
+              </sc-for>
+            </div>
+            <div style="margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:16px">
+              <span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-neutral-600)">{{ t.language }}</span>
+              <div class="seg" style="display:flex">
+                <sc-for list="{{ langOptions }}" as="l" hint-placeholder-count="2">
+                  <button class="tl-seg" style="min-width:52px;background:{{ l.bg }};color:{{ l.fg }}" onClick="{{ l.pick }}">{{ l.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="flex:1" onClick="{{ closeDrawer }}"></div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ dialogOpen }}">
+      <div style="position:absolute;inset:0;background:color-mix(in srgb, var(--color-accent-900) 60%, transparent);display:grid;place-items:center;padding:20px">
+        <div class="dialog blueprint elev-lg" style="background:var(--color-bg);border-color:var(--color-accent-300)">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <div class="dialog-title">{{ dialog.title }}</div>
+          <div class="dialog-body">{{ dialog.body }}</div>
+          <div class="dialog-actions">
+            <button class="btn btn-secondary" style="min-height:46px" onClick="{{ closeDialog }}">{{ t.cancel }}</button>
+            <button class="btn btn-primary blueprint" style="min-height:46px" onClick="{{ dialog.confirm }}">
+              <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+              {{ dialog.cta }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ toast }}">
+      <div style="position:absolute;left:16px;right:16px;bottom:74px;background:var(--color-accent-900);color:#f2f2f3;padding:12px 14px;display:flex;align-items:center;gap:10px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-300)" stroke-width="1.5" style="flex:none"><path d="M4 12.5 9.5 18 20 6"></path></svg>
+        <span style="font-size:13px">{{ toast }}</span>
+      </div>
+    </sc-if>
+
+  </div>
+  </sc-if>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:412,&quot;height&quot;:892},&quot;brandName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Fibreline&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;customerName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Rahim Chowdhury&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;planName&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Surfer Plus&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;language&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;EN&quot;,&quot;options&quot;:[&quot;EN&quot;,&quot;BN&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;startSignedOut&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;State&quot;},&quot;monthlyPrice&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1050,&quot;min&quot;:500,&quot;max&quot;:4000,&quot;step&quot;:25,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Account&quot;},&quot;serviceState&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;Active&quot;,&quot;options&quot;:[&quot;Active&quot;,&quot;Grace period&quot;,&quot;Suspended&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Account&quot;},&quot;showBanners&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Account&quot;},&quot;emptyData&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;State&quot;},&quot;offline&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;State&quot;}}">
+class Component extends DCLogic {
+  state = {
+    authed: null, authScreen: 'login', loginId: '08.01.001.410233', loginPw: '', loginError: false, otp: '',
+    screen: 'home', pkgTab: 'all', range: '7', method: null, issue: null, drawer: false, dialog: null,
+    ticketDone: false, connOpen: false, connIdx: 0, lang: null,
+    autopay: false, apSource: 'bKash', apDay: '3 days before due', apLines: { 0: true, 1: false, 2: false }, autopaySaved: false,
+    target: null,
+    st: 'idle', stPct: 0,
+    ssid: 'Chowdhury_5G', ssidDraft: 'Chowdhury_5G', wifiPw: 'gulshan144', wifiPwDraft: 'gulshan144', pwShown: false,
+    band: 'Both', guest: false, blocked: {}, wifiSaved: false,
+    thread: null, draft: '', messages: null,
+    redeem: null, points: 1240,
+    area: null, relocateDone: false,
+    prefs: { bill: true, payment: true, outage: true, offers: false, tickets: true },
+    copied: false, toast: null
+  };
+
+  componentWillUnmount() { clearTimeout(this._t); clearInterval(this._i); clearTimeout(this._toast); }
+
+  go(screen) {
+    return () => this.setState({
+      screen, drawer: false, connOpen: false,
+      ticketDone: screen === 'ticket' ? false : this.state.ticketDone,
+      autopaySaved: screen === 'autopay' ? false : this.state.autopaySaved,
+      relocateDone: screen === 'relocate' ? false : this.state.relocateDone
+    });
+  }
+
+  flash(msg) {
+    clearTimeout(this._toast);
+    this.setState({ toast: msg });
+    this._toast = setTimeout(() => this.setState({ toast: null }), 2600);
+  }
+
+  runTest = () => {
+    clearInterval(this._i);
+    this.setState({ st: 'run', stPct: 0 });
+    this._i = setInterval(() => {
+      const next = this.state.stPct + 7;
+      if (next >= 100) { clearInterval(this._i); this.setState({ st: 'done', stPct: 100 }); }
+      else this.setState({ stPct: next });
+    }, 90);
+  };
+
+  renderVals() {
+    const s = this.state, p = this.props;
+    const lang = s.lang || (p.language ?? 'EN');
+    const bn = lang === 'BN';
+    const T = (en, b) => (bn ? b : en);
+    const price = p.monthlyPrice ?? 1050;
+    const planName = p.planName ?? 'Surfer Plus';
+    const status = p.serviceState ?? 'Active';
+    const empty = p.emptyData ?? false;
+    const offline = p.offline ?? false;
+    const fmt = n => T('Tk ', '৳ ') + n.toLocaleString('en-US');
+    const sel = on => ({
+      bg: on ? 'var(--color-accent-100)' : 'transparent',
+      border: on ? 'var(--color-accent)' : 'var(--color-divider)',
+      dot: on ? 'var(--color-accent)' : 'transparent'
+    });
+    const sw = on => ({
+      border: on ? 'var(--color-accent)' : 'var(--color-neutral-400)',
+      track: on ? 'var(--color-accent-100)' : 'transparent',
+      knob: on ? '22px' : '2px',
+      knobBg: on ? 'var(--color-accent)' : 'var(--color-neutral-400)'
+    });
+    const tagOn = { bg: 'var(--color-accent-200)', fg: 'var(--color-accent-900)' };
+    const tagOff = { bg: 'var(--color-neutral-300)', fg: 'var(--color-neutral-900)' };
+
+    const t = {
+      selfcare: T('Self-care', 'সেলফ কেয়ার'),
+      signIn: T('Sign in', 'সাইন ইন'),
+      customerId: T('Customer ID', 'কাস্টমার আইডি'),
+      password: T('Password', 'পাসওয়ার্ড'),
+      loginErr: T('Enter your password to continue.', 'চালিয়ে যেতে পাসওয়ার্ড দিন।'),
+      forgot: T('Forgot password?', 'পাসওয়ার্ড ভুলে গেছেন?'),
+      or: T('or', 'অথবা'),
+      otpInstead: T('Sign in with OTP instead', 'ওটিপি দিয়ে সাইন ইন করুন'),
+      newHere: T('New here?', 'নতুন?'),
+      applyLine: T('Apply for a line', 'নতুন লাইনের আবেদন'),
+      enterCode: T('Enter the code', 'কোড দিন'),
+      codeSent: T('We sent a six-digit code to +880 1684 252611.', '+880 1684 252611 নম্বরে ছয় সংখ্যার কোড পাঠানো হয়েছে।'),
+      verify: T('Verify and sign in', 'যাচাই করে সাইন ইন'),
+      resendIn: T('Resend code in 0:42', '0:42 পরে কোড আবার পাঠান'),
+      useId: T('Use ID instead', 'আইডি ব্যবহার করুন'),
+      connection: T('Connection', 'সংযোগ'),
+      linkAnother: T('Link another connection', 'আরেকটি সংযোগ যোগ করুন'),
+      due: T('due', 'বকেয়া'),
+      by: T('by', 'শেষ তারিখ'),
+      payThis: T('Pay this line', 'এই লাইন পে করুন'),
+      payAll: T('Pay all', 'সব পে করুন'),
+      allConnections: T('All connections', 'সব সংযোগ'),
+      manage: T('Manage', 'ব্যবস্থাপনা'),
+      offer: T('Offer', 'অফার'),
+      referBanner: T('20% off for you and a neighbour', 'আপনি ও প্রতিবেশী — ২০% ছাড়'),
+      view: T('View', 'দেখুন'),
+      amountDue: T('Amount due', 'বকেয়া'),
+      cycle: T('Cycle 29 Aug – 28 Sep 2026', 'চক্র ২৯ আগ – ২৮ সেপ ২০২৬'),
+      payNow: T('Pay now', 'এখনই পে করুন'),
+      autopay: T('Autopay', 'অটোপে'),
+      paymentHistory: T('Payment history', 'পেমেন্ট ইতিহাস'),
+      date: T('Date', 'তারিখ'), channel: T('Channel', 'মাধ্যম'), amount: T('Amount', 'পরিমাণ'),
+      paying: T('Paying', 'পেমেন্ট'),
+      wallet: T('Mobile wallet', 'মোবাইল ওয়ালেট'),
+      card: T('Card', 'কার্ড'),
+      payNote: T('You leave the app to authorise, then return here for the receipt.', 'অনুমোদনের জন্য অ্যাপ ছেড়ে যাবেন, রসিদের জন্য এখানে ফিরবেন।'),
+      paymentReceived: T('Payment received', 'পেমেন্ট গৃহীত'),
+      runsTo: T('Service runs to 28 Oct 2026', 'সেবা চলবে ২৮ অক্টো ২০২৬ পর্যন্ত'),
+      downloadReceipt: T('Download receipt', 'রসিদ ডাউনলোড'),
+      done: T('Done', 'সম্পন্ন'),
+      autopayBlurb: T('We charge the bill automatically each cycle.', 'প্রতি চক্রে বিল স্বয়ংক্রিয়ভাবে কাটা হবে।'),
+      chargeFrom: T('Charge from', 'যেখান থেকে কাটা হবে'),
+      chargeWhen: T('Charge when', 'কখন কাটা হবে'),
+      whichLines: T('Which lines', 'কোন লাইনগুলো'),
+      saveAutopay: T('Save autopay', 'অটোপে সংরক্ষণ'),
+      autopaySavedTitle: T('Autopay is on', 'অটোপে চালু'),
+      backToBill: T('Back to bill', 'বিলে ফিরুন'),
+      autopayOffTitle: T('Autopay is off', 'অটোপে বন্ধ'),
+      autopayOffBody: T('Turn it on to stop worrying about the due date.', 'চালু করলে শেষ তারিখ নিয়ে ভাবতে হবে না।'),
+      allPlans: T('All plans', 'সব প্যাকেজ'),
+      current: T('Current', 'বর্তমান'),
+      currentPlan: T('Current plan', 'বর্তমান প্যাকেজ'),
+      perMonth: T('Tk / month', 'টাকা / মাস'),
+      details: T('Details', 'বিস্তারিত'),
+      switchingTo: T('Switching to', 'পরিবর্তন হচ্ছে'),
+      from: T('from', 'থেকে'),
+      proRata: T('Pro-rata this cycle', 'এই চক্রের প্রো-রাটা'),
+      proRataNote: T('The new speed applies within 30 minutes of confirming.', 'নিশ্চিত করার ৩০ মিনিটের মধ্যে নতুন গতি চালু হবে।'),
+      confirmSwitch: T('Confirm switch', 'পরিবর্তন নিশ্চিত করুন'),
+      cancel: T('Cancel', 'বাতিল'),
+      planQueued: T('Plan change queued', 'প্যাকেজ পরিবর্তন সারিবদ্ধ'),
+      download: T('Download', 'ডাউনলোড'), upload: T('Upload', 'আপলোড'),
+      unmeteredNote: T('Unmetered plan — the graph is for your own reference; nothing here throttles or bills.', 'আনমিটারড প্যাকেজ — গ্রাফটি শুধু আপনার তথ্যের জন্য।'),
+      speedNote: T('Run the test on Wi-Fi standing near the router for a fair reading.', 'সঠিক ফলাফলের জন্য রাউটারের কাছে থেকে ওয়াই-ফাইতে পরীক্ষা করুন।'),
+      network: T('Network', 'নেটওয়ার্ক'),
+      ssid: T('Network name (SSID)', 'নেটওয়ার্কের নাম (SSID)'),
+      wifiPassword: T('Wi-Fi password', 'ওয়াই-ফাই পাসওয়ার্ড'),
+      band: T('Band', 'ব্যান্ড'),
+      guestNetwork: T('Guest network', 'গেস্ট নেটওয়ার্ক'),
+      restartRouter: T('Restart router', 'রাউটার রিস্টার্ট'),
+      restartNote: T('Drops the line for about 90 seconds', 'প্রায় ৯০ সেকেন্ড লাইন বন্ধ থাকবে'),
+      devices: T('Connected devices', 'সংযুক্ত ডিভাইস'),
+      lineCheck: T('Line check', 'লাইন পরীক্ষা'),
+      lastChecked: T('Last checked 3 minutes ago', '৩ মিনিট আগে পরীক্ষা করা'),
+      rerun: T('Re-run', 'আবার'),
+      reachUs: T('Reach us', 'যোগাযোগ'),
+      yourTickets: T('Your tickets', 'আপনার টিকিট'),
+      noTicketsTitle: T('No tickets yet', 'কোনো টিকিট নেই'),
+      noTicketsBody: T('When something is wrong with the line, open a ticket and an engineer picks it up.', 'লাইনে সমস্যা হলে টিকিট খুলুন, একজন ইঞ্জিনিয়ার দেখবেন।'),
+      openTicket: T('Open a ticket', 'টিকিট খুলুন'),
+      problem: T('Problem', 'সমস্যা'),
+      whatHappening: T('What is happening?', 'কী হচ্ছে?'),
+      ticketPlaceholder: T('No link light since 6pm; router restarted twice.', 'সন্ধ্যা ৬টা থেকে লিংক লাইট নেই; দুবার রিস্টার্ট করেছি।'),
+      bestTime: T('Best time to visit', 'ভিজিটের সুবিধাজনক সময়'),
+      bestTimeVal: T('Today, after 5pm', 'আজ, বিকেল ৫টার পর'),
+      submitTicket: T('Submit ticket', 'টিকিট জমা দিন'),
+      ticketOpen: T('Ticket #4413 open', 'টিকিট #4413 খোলা হয়েছে'),
+      ticketOpenBody: T('An engineer replies within 2 hours. You get an SMS and a push.', '২ ঘণ্টার মধ্যে ইঞ্জিনিয়ার উত্তর দেবেন। এসএমএস ও পুশ পাবেন।'),
+      viewThread: T('View conversation', 'কথোপকথন দেখুন'),
+      reply: T('Write a reply', 'উত্তর লিখুন'),
+      pointsBalance: T('Reward points', 'রিওয়ার্ড পয়েন্ট'),
+      pointsRate: T('100 points = Tk 10 off your bill', '১০০ পয়েন্ট = বিলে ১০ টাকা ছাড়'),
+      redeem: T('Redeem', 'রিডিম'),
+      ledger: T('Points activity', 'পয়েন্টের হিসাব'),
+      yourCode: T('Your referral code', 'আপনার রেফারেল কোড'),
+      referralBlurb: T('Your neighbour gets 20% off month one. You get 500 points when their line goes live.', 'প্রতিবেশী প্রথম মাসে ২০% ছাড় পাবেন। লাইন চালু হলে আপনি ৫০০ পয়েন্ট পাবেন।'),
+      share: T('Share', 'শেয়ার'),
+      invites: T('Invites', 'ইনভাইট'),
+      noInvitesTitle: T('No invites yet', 'এখনো কোনো ইনভাইট নেই'),
+      noInvitesBody: T('Send your code to a neighbour to see their progress here.', 'কোড পাঠালে তাদের অবস্থা এখানে দেখা যাবে।'),
+      movingLine: T('Line to move', 'যে লাইন সরানো হবে'),
+      currentAddress: T('Now at Road 144, Gulshan, Dhaka', 'বর্তমানে রোড ১৪৪, গুলশান, ঢাকা'),
+      newArea: T('New area', 'নতুন এলাকা'),
+      newAddress: T('New address', 'নতুন ঠিকানা'),
+      addressPlaceholder: T('House 12, Road 7, Block C, flat 4B', 'বাড়ি ১২, রোড ৭, ব্লক সি, ফ্ল্যাট ৪বি'),
+      moveDate: T('Preferred date', 'পছন্দের তারিখ'),
+      moveDateVal: T('19 Sep 2026, morning', '১৯ সেপ ২০২৬, সকাল'),
+      relocateFee: T('Shifting fee Tk 500 within a covered area; outside coverage a survey is needed first.', 'কভারেজের ভেতরে স্থানান্তর ফি ৫০০ টাকা; বাইরে হলে আগে সার্ভে লাগবে।'),
+      requestMove: T('Request the move', 'স্থানান্তরের আবেদন'),
+      relocateDoneTitle: T('Move request sent', 'আবেদন পাঠানো হয়েছে'),
+      relocateDoneBody: T('A coordinator calls within one working day to fix the slot.', 'এক কর্মদিবসের মধ্যে সমন্বয়কারী ফোন করে সময় ঠিক করবেন।'),
+      language: T('Language', 'ভাষা'),
+      notifications: T('Notifications', 'নোটিফিকেশন'),
+      accountDetails: T('Account details', 'অ্যাকাউন্টের তথ্য'),
+      signOut: T('Sign out', 'সাইন আউট'),
+      editContact: T('Edit contact details', 'যোগাযোগের তথ্য সম্পাদনা'),
+      changePassword: T('Change password', 'পাসওয়ার্ড পরিবর্তন'),
+      signedIn: T('Signed in', 'সাইন ইন করা'),
+      noNotifTitle: T('Nothing new', 'নতুন কিছু নেই'),
+      noNotifBody: T('Bills, outages and ticket replies land here.', 'বিল, আউটেজ ও টিকিটের উত্তর এখানে আসবে।'),
+      offlineNote: T('No internet — showing your last saved data.', 'ইন্টারনেট নেই — সর্বশেষ সংরক্ষিত তথ্য দেখানো হচ্ছে।')
+    };
+
+    const statusMap = {
+      'Active': { label: T('Active', 'সক্রিয়'), ...tagOn, note: T('Paid through this cycle. Nothing needs your attention.', 'এই চক্রের বিল পরিশোধিত। কিছু করার নেই।') },
+      'Grace period': { label: T('Grace period', 'গ্রেস পিরিয়ড'), ...tagOff, note: T('Bill overdue — service stays on for 3 more days.', 'বিল বাকি — সেবা আরও ৩ দিন চালু থাকবে।') },
+      'Suspended': { label: T('Suspended', 'স্থগিত'), bg: 'var(--color-accent-900)', fg: '#f2f2f3', note: T('Connection suspended. Pay now to restore within 10 minutes.', 'সংযোগ স্থগিত। এখনই পে করলে ১০ মিনিটে চালু হবে।') }
+    };
+
+    const icons = {
+      bill: 'M4 4h16v16l-3-2-3 2-3-2-3 2z',
+      pkg: 'M4 8h16M4 8 12 3l8 5v11H4z',
+      usage: 'M4 20V10M10 20V4M16 20v-8M22 20h-20',
+      support: 'M4 12a8 8 0 0 1 16 0v5a3 3 0 0 1-3 3h-2M4 12v4a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 2',
+      home: 'M4 11 12 4l8 7v9H4z',
+      offers: 'M4 4h9l7 7-9 9-7-7z',
+      rewards: 'M8 4h8v5a4 4 0 0 1-8 0zM12 13v4M8 21h8',
+      account: 'M4 20a8 8 0 0 1 16 0M12 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8',
+      wifi: 'M2 8a16 16 0 0 1 20 0M5.5 12a11 11 0 0 1 13 0M9 16a6 6 0 0 1 6 0M12 20h.01',
+      speed: 'M12 20a8 8 0 1 1 8-8M12 12l5-3',
+      autopay: 'M20 12a8 8 0 1 1-3-6.2M20 4v5h-5',
+      referral: 'M4 20a7 7 0 0 1 12-4M9 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8M18 14v6M15 17h6',
+      settings: 'M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6M4 12h2M18 12h2M12 4v2M12 18v2M6.5 6.5 8 8M16 16l1.5 1.5M17.5 6.5 16 8M8 16l-1.5 1.5',
+      move: 'M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11M12 8a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5',
+      phone: 'M5 4h4l2 5-2 1a12 12 0 0 0 5 5l1-2 5 2v4h-4A16 16 0 0 1 5 8z',
+      mail: 'M3 6h18v12H3zM3 6l9 7 9-7',
+      chat: 'M4 5h16v10H9l-5 4z',
+      laptop: 'M4 5h16v10H4zM2 19h20',
+      mobile: 'M8 3h8v18H8zM11 18h2',
+      tv: 'M3 5h18v11H3zM9 20h6',
+      cam: 'M4 8h11v8H4zM15 11l5-3v8l-5-3'
+    };
+
+    const connDefs = [
+      { label: T('Gulshan home', 'গুলশান বাসা'), id: '08.01.001.410233', plan: planName, speed: 80, due: price, dueDate: T('28 Sep', '২৮ সেপ'), status: status },
+      { label: T('Banani office', 'বনানী অফিস'), id: '08.01.004.118902', plan: 'Eagle Advance', speed: 130, due: 1700, dueDate: T('02 Oct', '০২ অক্টো'), status: 'Active' },
+      { label: T("Mother's flat", 'মায়ের ফ্ল্যাট'), id: '08.01.002.339471', plan: 'Hawk Lite', speed: 135, due: 1800, dueDate: T('19 Sep', '১৯ সেপ'), status: 'Grace period' }
+    ];
+    const connections = connDefs.map((c, i) => {
+      const m = statusMap[c.status] || statusMap['Active'];
+      return {
+        ...c,
+        statusLabel: m.label,
+        dueFmt: fmt(c.due),
+        dueLabel: fmt(c.due) + ' ' + t.due,
+        tagBg: m.bg, tagFg: m.fg,
+        statusInk: c.status === 'Active' ? 'var(--color-accent-700)' : 'var(--color-neutral-700)',
+        dot: s.connIdx === i ? 'var(--color-accent-300)' : 'transparent',
+        rowBg: s.connIdx === i ? 'rgba(242,242,243,.10)' : 'transparent',
+        cardBg: s.connIdx === i ? 'var(--color-accent-100)' : 'var(--color-bg)',
+        pick: () => this.setState({ connIdx: i, connOpen: false })
+      };
+    });
+    const conn = connections[s.connIdx];
+    const totalDue = connDefs.reduce((a, c) => a + c.due, 0);
+
+    const titles = {
+      home: T('Connections', 'সংযোগ'), bill: T('My bill', 'আমার বিল'), pay: T('Pay bill', 'বিল পে'),
+      paid: T('Receipt', 'রসিদ'), autopay: t.autopay, packages: T('Packages', 'প্যাকেজ'),
+      planchange: T('Change plan', 'প্যাকেজ পরিবর্তন'), planchanged: T('Change plan', 'প্যাকেজ পরিবর্তন'),
+      usage: T('Bandwidth usage', 'ব্যান্ডউইথ ব্যবহার'), speedtest: T('Speed test', 'স্পিড টেস্ট'),
+      wifi: T('Wi-Fi & router', 'ওয়াই-ফাই ও রাউটার'), support: T('Support', 'সাপোর্ট'),
+      ticket: T('New ticket', 'নতুন টিকিট'), thread: T('Ticket', 'টিকিট'),
+      rewards: T('Rewards', 'রিওয়ার্ড'), referral: T('Refer a neighbour', 'প্রতিবেশীকে রেফার'),
+      relocate: T('Shift my line', 'লাইন স্থানান্তর'), settings: T('Settings', 'সেটিংস'),
+      account: T('My account', 'আমার অ্যাকাউন্ট'), notifications: t.notifications, offers: T('Offers', 'অফার')
+    };
+
+    const tiles = [
+      { label: T('My bill', 'বিল'), path: icons.bill, go: this.go('bill') },
+      { label: T('Packages', 'প্যাকেজ'), path: icons.pkg, go: this.go('packages') },
+      { label: T('Speed test', 'স্পিড টেস্ট'), path: icons.speed, go: this.go('speedtest') },
+      { label: T('Wi-Fi', 'ওয়াই-ফাই'), path: icons.wifi, go: this.go('wifi') },
+      { label: T('Usage', 'ব্যবহার'), path: icons.usage, go: this.go('usage') },
+      { label: t.autopay, path: icons.autopay, go: this.go('autopay') },
+      { label: T('Rewards', 'রিওয়ার্ড'), path: icons.rewards, go: this.go('rewards') },
+      { label: T('Refer', 'রেফার'), path: icons.referral, go: this.go('referral') },
+      { label: T('Support', 'সাপোর্ট'), path: icons.support, go: this.go('support') },
+      { label: T('Offers', 'অফার'), path: icons.offers, go: this.go('offers') },
+      { label: T('Shift line', 'স্থানান্তর'), path: icons.move, go: this.go('relocate') },
+      { label: T('Settings', 'সেটিংস'), path: icons.settings, go: this.go('settings') }
+    ];
+
+    const navDefs = [
+      { id: 'home', label: T('Home', 'হোম'), path: icons.home },
+      { id: 'bill', label: T('Bill', 'বিল'), path: icons.bill },
+      { id: 'packages', label: T('Plans', 'প্যাকেজ'), path: icons.pkg },
+      { id: 'wifi', label: T('Wi-Fi', 'ওয়াই-ফাই'), path: icons.wifi },
+      { id: 'support', label: T('Support', 'সাপোর্ট'), path: icons.support }
+    ];
+    const activeTab = { pay: 'bill', paid: 'bill', autopay: 'bill', ticket: 'support', thread: 'support', speedtest: 'wifi', planchange: 'packages', planchanged: 'packages' }[s.screen] || s.screen;
+    const navItems = navDefs.map(n => ({
+      ...n,
+      fg: activeTab === n.id ? 'var(--color-accent-900)' : 'var(--color-neutral-600)',
+      bg: activeTab === n.id ? 'var(--color-accent-100)' : 'transparent',
+      bar: activeTab === n.id ? 'var(--color-accent)' : 'transparent',
+      go: this.go(n.id)
+    }));
+
+    const pkgDefs = [
+      { name: conn.plan, speed: conn.speed, price: conn.due, tag: t.current },
+      { name: 'Cheetah Prime', speed: 100, price: 1275, tag: T('Popular', 'জনপ্রিয়') },
+      { name: 'Eagle Advance', speed: 130, price: 1700, tag: T('Household', 'পরিবার') },
+      { name: 'Hawk Lite', speed: 135, price: 1800, tag: T('Work from home', 'বাসা থেকে কাজ') }
+    ];
+    const packages = pkgDefs.map((d, i) => ({
+      ...d,
+      isCurrent: i === 0,
+      frame: i === 0 ? 'var(--color-accent)' : 'var(--color-accent-200)',
+      cardBg: i === 0 ? 'var(--color-accent-100)' : 'transparent',
+      ctaLabel: i === 0 ? t.currentPlan : T('Switch', 'পরিবর্তন'),
+      ctaBg: i === 0 ? 'transparent' : 'var(--color-accent)',
+      ctaFg: i === 0 ? 'var(--color-neutral-600)' : 'var(--color-bg)',
+      ctaBorder: i === 0 ? 'var(--color-divider)' : 'var(--color-accent)',
+      switchTo: i === 0 ? null : () => this.setState({ target: d, screen: 'planchange' })
+    }));
+
+    const target = s.target || pkgDefs[1];
+    const diff = target.price - conn.due;
+    const proRata = [
+      { k: T('Days left in cycle', 'চক্রে বাকি দিন'), v: '22' },
+      { k: T('Credit for unused days', 'অব্যবহৃত দিনের ক্রেডিট'), v: '− ' + fmt(Math.round(conn.due * 22 / 30)) },
+      { k: T('New plan, 22 days', 'নতুন প্যাকেজ, ২২ দিন'), v: fmt(Math.round(target.price * 22 / 30)) },
+      { k: T('Due today', 'আজ দিতে হবে'), v: fmt(Math.max(0, Math.round(diff * 22 / 30))), strong: true },
+      { k: T('From next cycle', 'পরের চক্র থেকে'), v: fmt(target.price) + T(' / month', ' / মাস') }
+    ].map(r => ({
+      ...r,
+      ink: r.strong ? 'var(--color-accent-900)' : 'var(--color-neutral-600)',
+      font: r.strong ? 'var(--font-heading)' : 'var(--font-body)'
+    }));
+
+    const wallets = ['bKash', 'Nagad', 'Upay', 'Rocket', 'Tap'].map(name => ({
+      name, ...sel(s.method === name), pick: () => this.setState({ method: name })
+    }));
+    const cards = ['Visa', 'Mastercard', 'Amex'].map(name => ({
+      name, ...sel(s.method === name), pick: () => this.setState({ method: name })
+    }));
+
+    const apSources = [
+      { name: 'bKash', meta: '•••• 2611' },
+      { name: 'Visa', meta: '•••• 4417' },
+      { name: T('Bank transfer', 'ব্যাংক ট্রান্সফার'), meta: 'BRAC •••• 8830' }
+    ].map(m => ({ ...m, ...sel(s.apSource === m.name), pick: () => this.setState({ apSource: m.name }) }));
+    const apDayDefs = [T('3 days before due', 'শেষ তারিখের ৩ দিন আগে'), T('On the due date', 'শেষ তারিখে'), T('1st of the month', 'মাসের ১ তারিখে')];
+    const apDays = apDayDefs.map(name => ({ name, ...sel(s.apDay === name || (apDayDefs.indexOf(name) === 0 && !apDayDefs.includes(s.apDay))), pick: () => this.setState({ apDay: name }) }));
+    const apLines = connections.map((c, i) => ({
+      label: c.label, dueFmt: c.dueFmt, dueDate: c.dueDate,
+      sw: sw(!!s.apLines[i]),
+      toggle: () => this.setState({ apLines: { ...s.apLines, [i]: !s.apLines[i] } })
+    }));
+    const apCount = Object.keys(s.apLines).filter(k => s.apLines[k]).length;
+
+    const rangeData = {
+      '7': { dl: 127, ul: 63, days: [[18, 6], [22, 9], [9, 3], [31, 12], [14, 5], [20, 15], [24, 13]], labels: [T('Mon', 'সোম'), T('Tue', 'মঙ্গল'), T('Wed', 'বুধ'), T('Thu', 'বৃহ'), T('Fri', 'শুক্র'), T('Sat', 'শনি'), T('Sun', 'রবি')] },
+      '15': { dl: 268, ul: 121, days: [[21, 8], [16, 6], [26, 11], [12, 4], [30, 14], [19, 9], [23, 12]], labels: ['1-2', '3-4', '5-6', '7-8', '9-10', '11-12', '13-15'] },
+      '30': { dl: 540, ul: 244, days: [[24, 10], [28, 13], [19, 7], [33, 15], [22, 9], [26, 12], [30, 14]], labels: ['1-4', '5-9', '10-13', '14-18', '19-22', '23-26', '27-30'] }
+    };
+    const rd = rangeData[s.range];
+    const maxDay = Math.max(...rd.days.map(d => d[0] + d[1]));
+    const bars = rd.days.map((d, i) => ({
+      label: rd.labels[i],
+      dlH: (d[0] / maxDay * 82).toFixed(1) + '%',
+      ulH: (d[1] / maxDay * 82).toFixed(1) + '%'
+    }));
+    const ranges = ['7', '15', '30'].map(r => ({
+      label: r + T(' days', ' দিন'),
+      bg: s.range === r ? 'var(--color-accent)' : 'transparent',
+      fg: s.range === r ? 'var(--color-bg)' : 'var(--color-text)',
+      pick: () => this.setState({ range: r })
+    }));
+
+    const issues = [T('No connection', 'সংযোগ নেই'), T('Slow speed', 'গতি কম'), T('Frequent drops', 'বারবার বিচ্ছিন্ন'), T('Billing question', 'বিল সংক্রান্ত')].map(label => ({
+      label, ...sel(s.issue === label), pick: () => this.setState({ issue: label })
+    }));
+
+    const stRunning = s.st === 'run';
+    const stDone = s.st === 'done';
+    const stBig = stDone ? '78.4' : stRunning ? (78.4 * s.stPct / 100).toFixed(1) : '—';
+
+    const bands = ['2.4 GHz', '5 GHz', T('Both', 'দুটোই')].map(label => ({
+      label,
+      bg: s.band === label || (label === T('Both', 'দুটোই') && s.band === 'Both') ? 'var(--color-accent)' : 'transparent',
+      fg: s.band === label || (label === T('Both', 'দুটোই') && s.band === 'Both') ? 'var(--color-bg)' : 'var(--color-text)',
+      pick: () => this.setState({ band: label })
+    }));
+    const deviceDefs = [
+      { name: T('Rahim iPhone', 'রহিম আইফোন'), meta: '192.168.0.14 · 42 Mbps', path: icons.mobile },
+      { name: T('Living room TV', 'বসার ঘরের টিভি'), meta: '192.168.0.21 · 18 Mbps', path: icons.tv },
+      { name: T('Work laptop', 'অফিস ল্যাপটপ'), meta: '192.168.0.8 · 6 Mbps', path: icons.laptop },
+      { name: T('Gate camera', 'গেট ক্যামেরা'), meta: '192.168.0.33 · 2 Mbps', path: icons.cam },
+      { name: T('Unknown device', 'অজানা ডিভাইস'), meta: '192.168.0.47 · 0 Mbps', path: icons.mobile }
+    ];
+    const devices = deviceDefs.map((d, i) => {
+      const blocked = !!s.blocked[i];
+      return {
+        ...d,
+        opacity: blocked ? '.5' : '1',
+        action: blocked ? T('Unblock', 'আনব্লক') : T('Block', 'ব্লক'),
+        actionInk: blocked ? 'var(--color-neutral-600)' : 'var(--color-accent-800)',
+        toggle: () => { this.setState({ blocked: { ...s.blocked, [i]: !blocked } }); this.flash(blocked ? T('Device allowed again.', 'ডিভাইস আবার অনুমোদিত।') : T('Device blocked on this network.', 'ডিভাইসটি এই নেটওয়ার্কে ব্লক করা হয়েছে।')); }
+      };
+    });
+    const blockedCount = Object.keys(s.blocked).filter(k => s.blocked[k]).length;
+
+    const ticketDefs = [
+      { id: '4402', title: T('Slow speed after 9pm', 'রাত ৯টার পর গতি কম'), status: T('In progress', 'চলমান'), ...tagOn, date: T('2 Sep 2026', '২ সেপ ২০২৬'), replies: T('3 replies', '৩টি উত্তর') },
+      { id: '4189', title: T('Router replacement', 'রাউটার পরিবর্তন'), status: T('Closed', 'বন্ধ'), ...tagOff, date: T('14 Aug 2026', '১৪ আগ ২০২৬'), replies: T('6 replies', '৬টি উত্তর') }
+    ];
+    const tickets = ticketDefs.map(d => ({ ...d, open: () => this.setState({ screen: 'thread', thread: d }) }));
+    const thread = s.thread || ticketDefs[0];
+    const baseMessages = [
+      { who: T('You', 'আপনি'), body: T('Speed drops below 10 Mbps every night after 9pm. Router is 2 metres away.', 'প্রতি রাত ৯টার পর গতি ১০ Mbps-এর নিচে নেমে যায়। রাউটার ২ মিটার দূরে।'), time: '2 Sep, 21:40', me: true },
+      { who: T('Support', 'সাপোর্ট'), body: T('Thanks — we can see congestion on your OLT port. Escalating to the field team tonight.', 'ধন্যবাদ — আপনার OLT পোর্টে কনজেশন দেখা যাচ্ছে। আজ রাতেই ফিল্ড টিমে পাঠানো হচ্ছে।'), time: '2 Sep, 22:05', me: false },
+      { who: T('Support', 'সাপোর্ট'), body: T('Port re-balanced. Please run a speed test after 9pm today and tell us what you see.', 'পোর্ট রি-ব্যালান্স করা হয়েছে। আজ ৯টার পর স্পিড টেস্ট করে জানান।'), time: '4 Sep, 11:12', me: false }
+    ];
+    const messages = (s.messages || baseMessages).map(m => ({
+      ...m,
+      align: m.me ? 'flex-end' : 'flex-start',
+      textAlign: m.me ? 'right' : 'left',
+      bg: m.me ? 'var(--color-accent-100)' : 'transparent',
+      fg: 'var(--color-text)',
+      border: m.me ? 'var(--color-accent-300)' : 'var(--color-divider)'
+    }));
+
+    const redeemDefs = [
+      { id: 'c50', title: T('Tk 50 bill credit', 'বিলে ৫০ টাকা ছাড়'), cost: 500 },
+      { id: 'c100', title: T('Tk 100 bill credit', 'বিলে ১০০ টাকা ছাড়'), cost: 1000 },
+      { id: 'c200', title: T('Tk 200 bill credit', 'বিলে ২০০ টাকা ছাড়'), cost: 2000 },
+      { id: 'game', title: T('Gaming route, one month', 'গেমিং রুট, এক মাস'), cost: 1500 }
+    ];
+    const redeemOptions = redeemDefs.map(r => {
+      const afford = s.points >= r.cost;
+      const on = s.redeem === r.id;
+      return {
+        ...r,
+        cost: r.cost.toLocaleString('en-US'),
+        disabled: !afford,
+        meta: afford ? T('Applies to your next bill', 'পরের বিলে যোগ হবে') : T('Not enough points yet', 'যথেষ্ট পয়েন্ট নেই'),
+        metaInk: afford ? 'var(--color-neutral-600)' : 'var(--color-neutral-500)',
+        bg: on ? 'var(--color-accent-100)' : 'transparent',
+        border: on ? 'var(--color-accent)' : 'var(--color-divider)',
+        dot: on ? 'var(--color-accent)' : 'transparent',
+        pick: afford ? () => this.setState({ redeem: r.id }) : null
+      };
+    });
+    const chosen = redeemDefs.find(r => r.id === s.redeem);
+
+    const inviteDefs = [
+      { name: T('Shahin (Road 141)', 'শাহীন (রোড ১৪১)'), date: T('Line live 22 Aug', 'লাইন চালু ২২ আগ'), status: T('Paid out', 'পরিশোধিত'), ...tagOn },
+      { name: T('Nusrat (Road 144)', 'নুসরাত (রোড ১৪৪)'), date: T('Survey booked 3 Sep', 'সার্ভে ৩ সেপ'), status: T('In progress', 'চলমান'), ...tagOn },
+      { name: T('Imran (Banani)', 'ইমরান (বনানী)'), date: T('Code used 28 Aug', 'কোড ব্যবহার ২৮ আগ'), status: T('Expired', 'মেয়াদোত্তীর্ণ'), ...tagOff }
+    ];
+
+    const areaDefs = [
+      { label: T('Gulshan 2', 'গুলশান ২'), covered: true },
+      { label: T('Banani DOHS', 'বনানী ডিওএইচএস'), covered: true },
+      { label: T('Bashundhara R/A', 'বসুন্ধরা আ/এ'), covered: true },
+      { label: T('Savar (outside)', 'সাভার (বাইরে)'), covered: false }
+    ];
+    const areas = areaDefs.map(a => ({
+      ...a,
+      ...sel(s.area === a.label),
+      cover: a.covered ? T('Covered', 'কভারেজ আছে') : T('Survey needed', 'সার্ভে দরকার'),
+      coverInk: a.covered ? 'var(--color-accent-700)' : 'var(--color-neutral-600)',
+      pick: () => this.setState({ area: a.label })
+    }));
+
+    const prefDefs = [
+      { id: 'bill', label: T('Bill reminders', 'বিলের রিমাইন্ডার'), note: T('3 days before the due date', 'শেষ তারিখের ৩ দিন আগে') },
+      { id: 'payment', label: T('Payment receipts', 'পেমেন্ট রসিদ'), note: T('Push and SMS', 'পুশ ও এসএমএস') },
+      { id: 'outage', label: T('Outage & maintenance', 'আউটেজ ও রক্ষণাবেক্ষণ'), note: T('Only for your area', 'শুধু আপনার এলাকার জন্য') },
+      { id: 'tickets', label: T('Ticket replies', 'টিকিটের উত্তর'), note: T('When an engineer responds', 'ইঞ্জিনিয়ার উত্তর দিলে') },
+      { id: 'offers', label: T('Offers & campaigns', 'অফার ও ক্যাম্পেইন'), note: T('At most twice a month', 'মাসে সর্বোচ্চ দুবার') }
+    ];
+    const prefs = prefDefs.map(d => ({
+      ...d, sw: sw(!!s.prefs[d.id]),
+      toggle: () => this.setState({ prefs: { ...s.prefs, [d.id]: !s.prefs[d.id] } })
+    }));
+
+    const langOptions = ['EN', 'BN'].map(l => ({
+      label: l,
+      bg: lang === l ? 'var(--color-accent)' : 'transparent',
+      fg: lang === l ? 'var(--color-bg)' : 'var(--color-text)',
+      pick: () => this.setState({ lang: l })
+    }));
+
+    const authed = s.authed === null ? !(p.startSignedOut ?? false) : s.authed;
+    const doLogin = () => {
+      if (s.authScreen === 'login' && !s.loginPw) { this.setState({ loginError: true }); return; }
+      this.setState({ authed: true, loginError: false, screen: 'home' });
+    };
+
+    const wifiClean = s.ssidDraft === s.ssid && s.wifiPwDraft === s.wifiPw;
+
+    return {
+      t,
+      brand: p.brandName ?? 'Fibreline',
+      customerName: p.customerName ?? 'Rahim Chowdhury',
+      screenTitle: titles[s.screen],
+      offline,
+      hasUnread: !empty,
+
+      isAuth: !authed,
+      isApp: authed,
+      isLogin: s.authScreen === 'login',
+      isOtp: s.authScreen === 'otp',
+      loginId: s.loginId, loginPw: s.loginPw, loginError: s.loginError,
+      setLoginId: e => this.setState({ loginId: e.target.value }),
+      setLoginPw: e => this.setState({ loginPw: e.target.value, loginError: false }),
+      doLogin,
+      goOtp: () => this.setState({ authScreen: 'otp' }),
+      goLogin: () => this.setState({ authScreen: 'login' }),
+      otp: s.otp,
+      setOtp: e => this.setState({ otp: e.target.value.replace(/[^0-9]/g, '').slice(0, 6) }),
+      otpBoxes: [0, 1, 2, 3, 4, 5].map(i => ({
+        ch: s.otp[i] || '',
+        bg: s.otp[i] ? 'var(--color-accent-100)' : 'transparent',
+        border: s.otp.length === i ? 'var(--color-accent)' : 'var(--color-accent-200)'
+      })),
+      otpDisabled: s.otp.length < 6,
+
+      isHome: s.screen === 'home', isBill: s.screen === 'bill', isPay: s.screen === 'pay', isPaid: s.screen === 'paid',
+      isAutopay: s.screen === 'autopay', isPackages: s.screen === 'packages',
+      isPlanChange: s.screen === 'planchange', isPlanChanged: s.screen === 'planchanged',
+      isUsage: s.screen === 'usage', isSpeedTest: s.screen === 'speedtest', isWifi: s.screen === 'wifi',
+      isSupport: s.screen === 'support', isTicket: s.screen === 'ticket', isThread: s.screen === 'thread',
+      isRewards: s.screen === 'rewards', isReferral: s.screen === 'referral', isRelocate: s.screen === 'relocate',
+      isSettings: s.screen === 'settings', isAccount: s.screen === 'account',
+      isNotifications: s.screen === 'notifications', isOffers: s.screen === 'offers',
+
+      tiles, navItems, packages, wallets, cards, bars, ranges, issues, connections, conn,
+      statusNote: (statusMap[conn.status] || statusMap['Active']).note,
+      connOpen: s.connOpen,
+      chevron: s.connOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+      connIndexLabel: (s.connIdx + 1) + T(' of ', ' / ') + connections.length,
+      connCountLabel: connections.length + T(' connections', ' সংযোগ'),
+      totalDueFmt: fmt(totalDue),
+      portfolio: [
+        { k: T('Connections', 'সংযোগ'), v: String(connections.length) },
+        { k: T('Total due', 'মোট বকেয়া'), v: fmt(totalDue) },
+        { k: T('Needs action', 'ব্যবস্থা দরকার'), v: '1' }
+      ],
+      toggleConn: () => this.setState({ connOpen: !s.connOpen }),
+      closeConn: () => this.setState({ connOpen: false }),
+      showBanners: p.showBanners ?? true,
+
+      goHome: this.go('home'), goPay: this.go('pay'), goOffers: this.go('offers'), goBill: this.go('bill'),
+      goUsage: this.go('usage'), goNotifications: this.go('notifications'), goPackages: this.go('packages'),
+      goSupport: this.go('support'), goTicket: this.go('ticket'), goAutopay: this.go('autopay'),
+      goRewards: this.go('rewards'), goReferral: this.go('referral'), goRelocate: this.go('relocate'),
+      goAccount: this.go('account'), goSettings: this.go('settings'),
+      goThread: () => this.setState({ screen: 'thread', thread: ticketDefs[0] }),
+      signOut: () => this.setState({ authed: false, authScreen: 'login', drawer: false, loginPw: '', otp: '' }),
+      openDrawer: () => this.setState({ drawer: true }),
+      closeDrawer: () => this.setState({ drawer: false }),
+      drawerOpen: s.drawer,
+      drawerLinks: [
+        { label: T('My account', 'আমার অ্যাকাউন্ট'), go: this.go('account') },
+        { label: T('Bandwidth usage', 'ব্যান্ডউইথ ব্যবহার'), go: this.go('usage') },
+        { label: T('Speed test', 'স্পিড টেস্ট'), go: this.go('speedtest') },
+        { label: t.autopay, go: this.go('autopay') },
+        { label: T('Refer a neighbour', 'প্রতিবেশীকে রেফার'), go: this.go('referral') },
+        { label: T('Shift my line', 'লাইন স্থানান্তর'), go: this.go('relocate') },
+        { label: T('Offers', 'অফার'), go: this.go('offers') },
+        { label: T('Settings', 'সেটিংস'), go: this.go('settings') },
+        { label: T('Privacy & terms', 'গোপনীয়তা ও শর্ত'), go: this.go('account') }
+      ],
+
+      autopayOn: s.autopay && s.autopaySaved,
+      autopayStatus: s.autopay && s.autopaySaved
+        ? apCount + T(' line(s) · ', ' লাইন · ') + s.apSource
+        : T('Not set up', 'সেট করা হয়নি'),
+      autopayNote: T('Autopay charges ', 'অটোপে কাটবে ') + s.apSource + T(' — ', ' — ') + s.apDay.toLowerCase(),
+      apSw: sw(s.autopay),
+      toggleAutopay: () => this.setState({ autopay: !s.autopay }),
+      autopayForm: !s.autopaySaved,
+      autopayDraft: s.autopay,
+      autopayEmpty: !s.autopay,
+      autopaySaved: s.autopaySaved,
+      apSources, apDays, apLines,
+      saveAutopay: () => this.setState({ autopaySaved: true }),
+
+      pkgSeg: {
+        allBg: s.pkgTab === 'all' ? 'var(--color-accent)' : 'transparent',
+        allFg: s.pkgTab === 'all' ? 'var(--color-bg)' : 'var(--color-text)',
+        activeBg: s.pkgTab === 'active' ? 'var(--color-accent)' : 'transparent',
+        activeFg: s.pkgTab === 'active' ? 'var(--color-bg)' : 'var(--color-text)'
+      },
+      pkgAll: () => this.setState({ pkgTab: 'all' }),
+      pkgActive: () => this.setState({ pkgTab: 'active' }),
+      pkgShowAll: s.pkgTab === 'all',
+      pkgShowActive: s.pkgTab === 'active',
+      planSpec: [
+        { k: T('Bandwidth', 'ব্যান্ডউইথ'), v: conn.speed + T(' Mbps up / down', ' Mbps আপ / ডাউন') },
+        { k: T('Monthly', 'মাসিক'), v: fmt(conn.due) + T(' incl. VAT', ' ভ্যাটসহ') },
+        { k: T('Data cap', 'ডেটা সীমা'), v: T('Unmetered', 'আনমিটারড') },
+        { k: T('Expires', 'মেয়াদ শেষ'), v: conn.dueDate + T(' 2026, 6:41 PM', ' ২০২৬, সন্ধ্যা ৬:৪১') },
+        { k: T('Support', 'সাপোর্ট'), v: T('24 hours, hotline 16335', '২৪ ঘণ্টা, হটলাইন ১৬৩৩৫') },
+        { k: T('Contract', 'চুক্তি'), v: T('Rolling monthly', 'মাসিক নবায়নযোগ্য') }
+      ],
+      targetPlan: target,
+      proRata,
+      confirmPlan: () => this.setState({ screen: 'planchanged' }),
+      planQueuedNote: target.name + T(' applies within 30 minutes on ', ' চালু হবে ৩০ মিনিটের মধ্যে — ') + conn.label,
+
+      totals: [
+        { k: t.download, v: rd.dl + ' GB' },
+        { k: t.upload, v: rd.ul + ' GB' },
+        { k: T('Total', 'মোট'), v: (rd.dl + rd.ul) + ' GB' }
+      ],
+
+      stRunning, stDone, stBig,
+      stPhaseLabel: stDone ? T('Download', 'ডাউনলোড') : stRunning ? T('Testing download', 'ডাউনলোড পরীক্ষা') : T('Ready', 'প্রস্তুত'),
+      stProgress: (stDone ? 100 : s.stPct) + '%',
+      stServer: T('Server: Dhaka · Gulshan POP', 'সার্ভার: ঢাকা · গুলশান পপ'),
+      stMetrics: [
+        { k: t.upload, v: stDone ? '76.1' : '—' },
+        { k: T('Ping', 'পিং'), v: stDone ? '8 ms' : '—' },
+        { k: T('Jitter', 'জিটার'), v: stDone ? '2 ms' : '—' }
+      ],
+      stVerdict: T('You are getting 98% of your ' + conn.speed + ' Mbps plan over Wi-Fi. Nothing to fix.', 'ওয়াই-ফাইতে আপনার প্যাকেজের ৯৮% গতি পাচ্ছেন। ঠিক করার কিছু নেই।'),
+      stButton: stRunning ? T('Testing…', 'পরীক্ষা চলছে…') : stDone ? T('Test again', 'আবার পরীক্ষা') : T('Start test', 'পরীক্ষা শুরু'),
+      runSpeedTest: this.runTest,
+
+      ssid: s.ssidDraft,
+      routerModel: 'TP-Link EC230',
+      setSsid: e => this.setState({ ssidDraft: e.target.value }),
+      wifiPw: s.wifiPwDraft,
+      setWifiPw: e => this.setState({ wifiPwDraft: e.target.value }),
+      pwType: s.pwShown ? 'text' : 'password',
+      pwToggleLabel: s.pwShown ? T('Hide', 'লুকান') : T('Show', 'দেখুন'),
+      togglePw: () => this.setState({ pwShown: !s.pwShown }),
+      bands,
+      wifiClean,
+      wifiSaveLabel: wifiClean ? T('No changes to save', 'পরিবর্তন নেই') : T('Save and reconnect devices', 'সংরক্ষণ ও ডিভাইস পুনঃসংযোগ'),
+      saveWifi: () => { this.setState({ ssid: s.ssidDraft, wifiPw: s.wifiPwDraft }); this.flash(T('Network updated — devices reconnect in a moment.', 'নেটওয়ার্ক আপডেট হয়েছে — ডিভাইস কিছুক্ষণে সংযুক্ত হবে।')); },
+      guestSw: sw(s.guest),
+      guestNote: s.guest ? T('Fibreline_Guest · no LAN access', 'Fibreline_Guest · ল্যান অ্যাক্সেস নেই') : T('Off — visitors use the main network', 'বন্ধ — অতিথিরা মূল নেটওয়ার্ক ব্যবহার করছেন'),
+      toggleGuest: () => this.setState({ guest: !s.guest }),
+      devices,
+      deviceCountLabel: (deviceDefs.length - blockedCount) + T(' active · ', ' সক্রিয় · ') + blockedCount + T(' blocked', ' ব্লক'),
+      askRestart: () => this.setState({ dialog: 'restart' }),
+
+      lineCheckTitle: offline ? T('Cannot reach the line', 'লাইনে পৌঁছানো যাচ্ছে না') : T('No fault on your line', 'আপনার লাইনে সমস্যা নেই'),
+      contacts: [
+        { k: T('Hotline', 'হটলাইন'), v: '16335', path: icons.support },
+        { k: T('Phone', 'ফোন'), v: '09678 123 123', path: icons.phone },
+        { k: T('Email', 'ইমেইল'), v: 'support@example.net', path: icons.mail },
+        { k: T('Live chat', 'লাইভ চ্যাট'), v: T('Usually replies in 4 min', 'সাধারণত ৪ মিনিটে উত্তর'), path: icons.chat }
+      ],
+      tickets, hasTickets: !empty, noTickets: empty,
+      ticketDone: s.ticketDone,
+      ticketForm: !s.ticketDone,
+      ticketDisabled: !s.issue,
+      submitTicket: () => this.setState({ ticketDone: true }),
+      thread: { ...thread, eta: T('Reply within 2 hours', '২ ঘণ্টার মধ্যে উত্তর') },
+      messages,
+      draft: s.draft,
+      setDraft: e => this.setState({ draft: e.target.value }),
+      sendDisabled: !s.draft.trim(),
+      sendMessage: () => this.setState({
+        messages: [...(s.messages || baseMessages), { who: T('You', 'আপনি'), body: s.draft, time: T('Just now', 'এখনই'), me: true }],
+        draft: ''
+      }),
+
+      points: s.points,
+      pointsFmt: s.points.toLocaleString('en-US'),
+      pointsValue: fmt(Math.round(s.points / 10)),
+      redeemOptions,
+      redeemDisabled: !chosen,
+      redeemLabel: chosen ? T('Redeem ', 'রিডিম ') + chosen.cost.toLocaleString('en-US') + T(' points', ' পয়েন্ট') : T('Choose a reward', 'একটি রিওয়ার্ড বাছুন'),
+      doRedeem: () => { if (!chosen) return; this.setState({ points: s.points - chosen.cost, redeem: null }); this.flash(chosen.title + T(' applied to your next bill.', ' পরের বিলে যোগ হয়েছে।')); },
+      ledger: [
+        { k: T('Referral — Shahin', 'রেফারেল — শাহীন'), date: T('22 Aug 2026', '২২ আগ ২০২৬'), v: '+500', ink: 'var(--color-accent-800)' },
+        { k: T('On-time payment', 'সময়মতো পেমেন্ট'), date: T('10 Aug 2026', '১০ আগ ২০২৬'), v: '+120', ink: 'var(--color-accent-800)' },
+        { k: T('Redeemed Tk 50 credit', 'রিডিম ৫০ টাকা'), date: T('2 Aug 2026', '২ আগ ২০২৬'), v: '−500', ink: 'var(--color-neutral-700)' },
+        { k: T('Anniversary bonus', 'বার্ষিক বোনাস'), date: T('11 Mar 2026', '১১ মার্চ ২০২৬'), v: '+1,000', ink: 'var(--color-accent-800)' }
+      ],
+
+      referralCode: 'RAHIM-4X2',
+      copyLabel: s.copied ? T('Code copied', 'কোড কপি হয়েছে') : T('Copy code', 'কোড কপি'),
+      copyCode: () => { this.setState({ copied: true }); this.flash(T('RAHIM-4X2 copied to the clipboard.', 'RAHIM-4X2 কপি হয়েছে।')); },
+      referralStats: [
+        { k: T('Invites used', 'ব্যবহৃত ইনভাইট'), v: empty ? '0' : '3' },
+        { k: T('Points earned', 'অর্জিত পয়েন্ট'), v: empty ? '0' : '1,000' }
+      ],
+      invites: inviteDefs, hasInvites: !empty, noInvites: empty,
+
+      areas,
+      relocateDone: s.relocateDone,
+      relocateForm: !s.relocateDone,
+      relocateDisabled: !s.area,
+      submitRelocate: () => this.setState({ relocateDone: true }),
+
+      prefs, langOptions,
+
+      accountSpec: [
+        { k: T('Email', 'ইমেইল'), v: 'rahim.c@example.com' },
+        { k: T('Phone', 'ফোন'), v: '+880 1684 252611' },
+        { k: T('Address', 'ঠিকানা'), v: T('Road 144, Gulshan, Dhaka', 'রোড ১৪৪, গুলশান, ঢাকা') },
+        { k: T('Connections', 'সংযোগ'), v: connections.length + T(' active lines', 'টি সক্রিয় লাইন') },
+        { k: T('Router MAC', 'রাউটার ম্যাক'), v: 'B4:FB:E4:19:2C:08' },
+        { k: T('Installed', 'স্থাপন'), v: T('11 Mar 2024', '১১ মার্চ ২০২৪') }
+      ],
+
+      hasNotifications: !empty, noNotifications: empty,
+      notifications: [
+        { title: T('Payment received', 'পেমেন্ট গৃহীত'), body: fmt(price) + T(' credited to 410233. Service runs to 28 Oct.', ' জমা হয়েছে 410233-এ। সেবা চলবে ২৮ অক্টো পর্যন্ত।'), time: T('10 Aug, 12:22 AM', '১০ আগ, রাত ১২:২২'), dot: 'var(--color-accent)', rowBg: 'var(--color-accent-100)' },
+        { title: T('Bill due tomorrow', 'কাল বিলের শেষ তারিখ'), body: T("Mother's flat — pay by 6:41 PM to keep the line active.", 'মায়ের ফ্ল্যাট — লাইন সক্রিয় রাখতে সন্ধ্যা ৬:৪১-এর মধ্যে পে করুন।'), time: T('27 Jul, 10:47 AM', '২৭ জুলা, সকাল ১০:৪৭'), dot: 'var(--color-accent)', rowBg: 'var(--color-accent-100)' },
+        { title: T('Planned maintenance', 'পরিকল্পিত রক্ষণাবেক্ষণ'), body: T('Gulshan zone, 2–4 AM Friday. Brief drops expected.', 'গুলশান জোন, শুক্রবার রাত ২–৪টা। সংযোগ সংক্ষিপ্তভাবে বন্ধ হতে পারে।'), time: T('20 Jul, 6:02 PM', '২০ জুলা, সন্ধ্যা ৬:০২'), dot: 'var(--color-neutral-400)', rowBg: 'transparent' },
+        { title: T('Ticket #4189 closed', 'টিকিট #4189 বন্ধ'), body: T('Router replaced on site. Rate the visit.', 'রাউটার প্রতিস্থাপিত হয়েছে। ভিজিট রেটিং দিন।'), time: T('14 Aug, 3:30 PM', '১৪ আগ, বিকেল ৩:৩০'), dot: 'var(--color-neutral-400)', rowBg: 'transparent' }
+      ],
+
+      offers: [
+        { kicker: T('Referral', 'রেফারেল'), title: T('20% off for two', 'দুজনের জন্য ২০% ছাড়'), body: T('Refer a neighbour; you both get one month at 20% off once their line is live.', 'প্রতিবেশীকে রেফার করুন; তাদের লাইন চালু হলে দুজনেই এক মাস ২০% ছাড় পাবেন।') },
+        { kicker: T('Upgrade', 'আপগ্রেড'), title: T('Same price, more speed', 'একই দামে বেশি গতি'), body: T('Cheetah Prime at 100 Mbps for your current price until December.', 'ডিসেম্বর পর্যন্ত বর্তমান দামেই ১০০ Mbps চিতা প্রাইম।') },
+        { kicker: T('Gaming', 'গেমিং'), title: T('Low-latency routing', 'লো-লেটেন্সি রাউটিং'), body: T('Add the gaming route for Tk 150 / month — regional peering, no data cap.', 'মাসে ১৫০ টাকায় গেমিং রুট — রিজিওনাল পিয়ারিং, ডেটা সীমা নেই।') }
+      ],
+
+      history: [
+        { date: T('10 Aug 2026', '১০ আগ ২০২৬'), channel: 'bKash', amount: fmt(price) },
+        { date: T('28 Jul 2026', '২৮ জুলা ২০২৬'), channel: 'bKash', amount: fmt(price) },
+        { date: T('27 Jun 2026', '২৭ জুন ২০২৬'), channel: 'Visa', amount: fmt(price) },
+        { date: T('28 May 2026', '২৮ মে ২০২৬'), channel: 'bKash', amount: fmt(price) },
+        { date: T('28 Apr 2026', '২৮ এপ্রি ২০২৬'), channel: 'Nagad', amount: fmt(price) }
+      ],
+      payDisabled: !s.method,
+      payLabel: s.method ? T('Pay with ', 'পে করুন ') + s.method : T('Choose a payment method', 'পেমেন্ট মাধ্যম বাছুন'),
+      confirmPay: () => this.setState({ screen: 'paid' }),
+      receipt: [
+        { k: T('Receipt', 'রসিদ'), v: '#1125216' },
+        { k: T('Paid', 'পরিশোধিত'), v: conn.dueFmt },
+        { k: T('Channel', 'মাধ্যম'), v: s.method || 'bKash' },
+        { k: T('Connection', 'সংযোগ'), v: conn.label },
+        { k: T('Date', 'তারিখ'), v: T('5 Sep 2026, 8:12 PM', '৫ সেপ ২০২৬, রাত ৮:১২') }
+      ],
+
+      dialogOpen: !!s.dialog,
+      dialog: {
+        title: T('Restart the router?', 'রাউটার রিস্টার্ট করবেন?'),
+        body: T('Every device drops for about 90 seconds. Calls and streams will cut out.', 'সব ডিভাইস প্রায় ৯০ সেকেন্ড বিচ্ছিন্ন থাকবে। কল ও স্ট্রিম বন্ধ হবে।'),
+        cta: T('Restart now', 'এখনই রিস্টার্ট'),
+        confirm: () => { this.setState({ dialog: null }); this.flash(T('Router restarting — back in about 90 seconds.', 'রাউটার রিস্টার্ট হচ্ছে — প্রায় ৯০ সেকেন্ডে ফিরবে।')); }
+      },
+      closeDialog: () => this.setState({ dialog: null }),
+      toast: s.toast
+    };
+  }
+}
+</script>
+</body>
+</html>
