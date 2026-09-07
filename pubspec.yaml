@@ -47,7 +47,7 @@ dev_dependencies:
   json_serializable: ^6.13.2
   retrofit_generator: ^10.2.6
   flutter_gen_runner: ^5.14.1
-  very_good_analysis: ^10.2.0
+  very_good_analysis: ^11.0.0
 
 flutter:
   generate: true
